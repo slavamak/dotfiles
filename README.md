@@ -1,4 +1,5 @@
 ![nvim screenshot](./neovim.png)
+
 ![nvim screenshot](./highlights.png)
 
 # Configurations for MacOS/Ubuntu
@@ -41,20 +42,19 @@ make asdf
 make node-packages
 ```
 
-### Next
-1. Before launch Neovim, make sure that [tree-sitter](https://github.com/tree-sitter/tree-sitter/) is installed globally
-2. After that update the parsers with command `:TSUpdate`
-
 ## Neovim
 
 Requires Neovim version >= 0.8.0
 
+> 1. Before launch Neovim, make sure that [tree-sitter](https://github.com/tree-sitter/tree-sitter/) is installed globally
+> 2. After that update the parsers with command `:TSUpdate`
+
 ### Plugins
 
-**WIP** - not all plugins work the way I would like them to, so I will periodically fix it
+**WIP** - I think a few plugins are not perfectly configured, I'll fix that later (or not)
 
 - [wbthomason/packer.nvim](https://github.com/wbthomason/packer.nvim) -- Plugin manager
-- nvim-lua/plenary.nvim -- Lua functions for Neovim
+- [nvim-lua/plenary.nvim](https://github.com/nvim-lua/plenary.nvim) -- Lua functions for Neovim
 - [kyazdani42/nvim-web-devicons](https://github.com/kyazdani42/nvim-web-devicons) -- Adds file type icons
 - [norcalli/nvim-colorizer.lua](https://github.com/norcalli/nvim-colorizer.lua) -- A high-performance color highlighter
 - [projekt0n/github-nvim-theme](https://github.com/projekt0n/github-nvim-theme) -- Github color themes
@@ -82,24 +82,24 @@ Requires Neovim version >= 0.8.0
 - [gpanders/editorconfig.nvim](https://github.com/gpanders/editorconfig.nvim) -- Support for EditorConfig
 - [rcarriga/nvim-notify](https://github.com/rcarriga/nvim-notify) -- Notification manager
 - [lukas-reineke/indent-blankline.nvim](https://github.com/lukas-reineke/indent-blankline.nvim) -- Indentation guides to all lines
-- [goolord/alpha-nvim](https://github.com/goolord/alpha-nvim) - Programmable greeter
+- [goolord/alpha-nvim](https://github.com/goolord/alpha-nvim) - A beautiful greeting
 
 ## iTerm
 
-Import files with settings and colorscheme - github light default
+Settings and colors theme
 
 ## Tmux
 
-Base configuration, key bindings and colorscheme - github light default
+Base configuration, key bindings and colors theme
 
 ## zsh
 
-With zsh also installs *oh-my-zsh* - framework for managing configuration. **oh-my-zsh** includes plugins for integration with:
+With zsh also installs **oh-my-zsh** - framework for managing configuration. This framework includes few plugins:
 
 - asdf
 - gh
 - git
-- macos/ubuntu (uncomment the appropriate one in the file `.zsh`)
+- macos/ubuntu *(uncomment the appropriate one in the file `.zsh`)*
 - tmux
 - z
 
@@ -107,4 +107,4 @@ Check the documentation about plugins [here](https://github.com/ohmyzsh/ohmyzsh/
 
 ## Thanks
 
-Thanks a lot for the inspiration [craftzdog](https://github.com/craftzdog) and the other cool folks at github :)
+Thanks a lot for the inspiration [craftzdog](https://github.com/craftzdog), [mokevnin](https://github.com/mokevnin) and the other cool folks at github :)
