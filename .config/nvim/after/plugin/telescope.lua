@@ -1,5 +1,6 @@
 local status, telescope = pcall(require, 'telescope')
 if not status then return end
+local actions = require 'telescope.actions'
 local builtin = require 'telescope.builtin'
 
 local function telescope_buffer_dir()
@@ -7,6 +8,18 @@ local function telescope_buffer_dir()
 end
 
 telescope.setup {
+  defaults = {
+    mappings = {
+      i = {
+        ['<C-s>'] = actions.delete_buffer,
+        ['<C-q>'] = actions.close,
+      },
+      n = {
+        ['<C-s>'] = actions.delete_buffer,
+        ['q'] = actions.close,
+      },
+    },
+  },
   extensions = {
     file_browser = {
       theme = 'dropdown',
