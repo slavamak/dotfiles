@@ -30,6 +30,7 @@ git clone git@github.com:slavamak/dotfiles.git
 cd dotfiles
 
 # preparations and install core packages
+# this will install iterm, neovim, tmux, zsh, oh-my-zsh and more
 make
 
 # reload shell with new configuration
@@ -99,11 +100,11 @@ With zsh also installs **oh-my-zsh** - framework for managing configuration. Thi
 - asdf
 - gh
 - git
-- macos/ubuntu *(uncomment the appropriate one in the file `.zsh`)*
+- macos/ubuntu *(uncomment the appropriate one in the file [.zshrc](https://github.com/slavamak/dotfiles/blob/main/.config/zsh/.zshrc))*
 - tmux
 - z
 
-Check the documentation about plugins [here](https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins)
+Read the documentation on these and other plugins [here](https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins)
 
 ## Thanks
 
