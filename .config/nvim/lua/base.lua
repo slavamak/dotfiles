@@ -17,3 +17,9 @@ vim.opt.ignorecase = true
 vim.opt.list = true
 vim.opt.listchars = { space = '·', tab = '->' }
 vim.opt.number = true
+
+-- Syntax support for postcss files
+vim.api.nvim_create_autocmd({ 'Bufread', 'BufNewFile' }, {
+  pattern = { '*.css', '*.postcss' },
+  command = 'set filetype=scss',
+})
