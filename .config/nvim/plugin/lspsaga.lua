@@ -1,11 +1,7 @@
 local status, saga = pcall(require, 'lspsaga')
 if not status then return end
 
-saga.init_lsp_saga {
-  server_filetype_map = {
-    typescript = 'typescript',
-  },
-}
+saga.init_lsp_saga {}
 
 local opts = { noremap = true, silent = true }
 local keymap = vim.keymap
@@ -17,4 +13,4 @@ keymap.set('n', '<leader>cd', '<cmd>Lspsaga show_cursor_diagnostics<CR>', opts)
 keymap.set('n', 'gh', '<Cmd>Lspsaga lsp_finder<CR>', opts)
 keymap.set({ 'n', 'v' }, '<leader>ca', '<cmd>Lspsaga code_action<CR>', opts)
 keymap.set('n', 'gr', '<Cmd>Lspsaga rename<CR>', opts)
-keymap.set('n', 'gp', '<Cmd>Lspsaga preview_definition<CR>', opts)
+keymap.set('n', 'gp', '<Cmd>Lspsaga peek_definition<CR>', opts)

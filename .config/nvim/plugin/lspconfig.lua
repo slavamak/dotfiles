@@ -10,7 +10,9 @@ local enable_format_on_save = function(_, bufnr)
     group = augroup_format,
     buffer = bufnr,
     callback = function()
-      vim.lsp.buf.format { bufnr = bufnr }
+      vim.lsp.buf.format {
+        bufnr = bufnr,
+      }
     end,
   })
 end
@@ -29,6 +31,7 @@ local on_attach = function(client, bufnr)
   buf_set_keymap('n', 'gD', '<Cmd>lua vim.lsp.buf.declaration()<CR>', opts)
   buf_set_keymap('n', 'gd', '<Cmd>lua vim.lsp.buf.definition()<CR>', opts)
   buf_set_keymap('n', 'gi', '<cmd>lua vim.lsp.buf.implementation()<CR>', opts)
+  buf_set_keymap('n', '<leader>lf', '<cmd>lua vim.lsp.buf.format()<CR>', opts)
 end
 
 protocol.CompletionItemKind = {
@@ -64,7 +67,6 @@ local capabilities = require('cmp_nvim_lsp').default_capabilities()
 
 nvim_lsp.tsserver.setup {
   on_attach = on_attach,
-  cmd = { 'typescript-language-server', '--stdio' },
   capabilities = capabilities,
 }
 
