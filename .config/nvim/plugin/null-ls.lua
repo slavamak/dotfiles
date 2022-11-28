@@ -20,7 +20,17 @@ null_ls.setup {
     null_ls.builtins.diagnostics.stylelint,
     null_ls.builtins.formatting.eslint_d,
     null_ls.builtins.formatting.stylelint,
-    null_ls.builtins.formatting.prettierd,
+    -- For eslint and stylelint prettier runs via plugin
+    null_ls.builtins.formatting.prettierd.with {
+      disabled_filetypes = {
+        'css',
+        'javascript',
+        'javascriptreact',
+        'scss',
+        'typescript',
+        'typescriptreact',
+      },
+    },
     null_ls.builtins.formatting.stylua,
   },
   on_attach = function(client, bufnr)
