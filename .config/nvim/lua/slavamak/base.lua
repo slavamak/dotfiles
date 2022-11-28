@@ -17,6 +17,9 @@ vim.opt.ignorecase = true
 vim.opt.list = true
 vim.opt.listchars = { space = '·', tab = '->' }
 vim.opt.number = true
+vim.opt.showmatch = true
+vim.opt.cursorline = true
+vim.opt.hlsearch = true
 
 -- Syntax support for postcss files
 vim.api.nvim_create_autocmd({ 'Bufread', 'BufNewFile' }, {

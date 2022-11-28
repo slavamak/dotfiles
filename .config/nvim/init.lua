@@ -7,6 +7,6 @@ if vim.fn.has 'nvim-0.8' == 0 then
   end)
 end
 
-require 'base'
-require 'bootstrap'
-require 'plugins'
+require 'slavamak.base'
+require 'slavamak.bootstrap'
+require 'slavamak.plugins'

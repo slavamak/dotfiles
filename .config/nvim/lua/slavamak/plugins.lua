@@ -21,11 +21,12 @@ packer.startup(function(use)
   use 'hrsh7th/cmp-buffer' -- Source for buffer words
   use 'folke/lsp-colors.nvim' -- Creates missing LSP diagnostics highlight groups
 
-  use 'neovim/nvim-lspconfig' -- Configurations for LSP
-  use 'jose-elias-alvarez/null-ls.nvim' -- LSP diagnostics, code actions, formating
   use 'williamboman/mason.nvim' -- Easily install and manage LSP
   use 'williamboman/mason-lspconfig.nvim' -- Extension that makes it easier to use lspconfig
+  use 'neovim/nvim-lspconfig' -- Configurations for LSP
+
   use 'jayp0521/mason-null-ls.nvim' -- Extension that makes it easier to use null-ls
+  use 'jose-elias-alvarez/null-ls.nvim' -- LSP diagnostics, code actions, formating
   use 'glepnir/lspsaga.nvim' -- A light-weight UI plugin for LSP
 
   use {
