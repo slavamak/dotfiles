@@ -1,6 +1,16 @@
 local status, treesitter = pcall(require, 'nvim-treesitter.configs')
 if not status then return end
 
+local parser_config = require('nvim-treesitter.parsers').get_parser_configs()
+parser_config.liquid = {
+  install_info = {
+    url = 'https://github.com/Shopify/tree-sitter-liquid-ii.git',
+    files = { 'src/parser.c' },
+    branch = 'main',
+  },
+  filetype = 'liquid',
+}
+
 treesitter.setup {
   auto_install = true,
   ensure_installed = {
@@ -12,6 +22,7 @@ treesitter.setup {
     'javascript',
     'jsdoc',
     'json',
+    'liquid',
     'lua',
     'make',
     'markdown',
@@ -38,14 +49,4 @@ treesitter.setup {
     enable = true,
     disable = {},
   },
-}
-
-local parser_config = require('nvim-treesitter.parsers').get_parser_configs()
-parser_config.liquid = {
-  install_info = {
-    url = 'https://github.com/Shopify/tree-sitter-liquid-ii.git',
-    files = { 'src/parser.c' },
-    branch = 'main',
-  },
-  filetype = 'liquid',
 }

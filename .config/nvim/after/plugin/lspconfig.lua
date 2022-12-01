@@ -1,6 +1,8 @@
 local mason_lsp_status, mason_lsp = pcall(require, 'mason-lspconfig')
 if not mason_lsp_status then return end
 
+local lsp = require 'lspconfig'
+local util = require 'lspconfig.util'
 local capabilities = require('cmp_nvim_lsp').default_capabilities()
 
 local on_attach = function(client, bufnr)
@@ -21,6 +23,8 @@ mason_lsp.setup {
   ensure_installed = {
     'astro',
     'cssls',
+    'html',
+    'sumneko_lua',
     'tailwindcss',
     'theme_check',
     'tsserver',
@@ -29,13 +33,13 @@ mason_lsp.setup {
 
 mason_lsp.setup_handlers {
   function(server_name)
-    require('lspconfig')[server_name].setup {
+    lsp[server_name].setup {
       on_attach = on_attach,
       capabilities = capabilities,
     }
   end,
   ['sumneko_lua'] = function()
-    require('lspconfig').sumneko_lua.setup {
+    lsp.sumneko_lua.setup {
       on_attach = on_attach,
       capabilities = capabilities,
       settings = {
@@ -45,6 +49,14 @@ mason_lsp.setup_handlers {
           },
         },
       },
+    }
+  end,
+  ['theme_check'] = function()
+    lsp.theme_check.setup {
+      on_attach = on_attach,
+      capabilities = capabilities,
+      root_dir = util.root_pattern('.theme-check.yml', '.theme-check.yaml')
+        or util.find_package_json_ancestor,
     }
   end,
 }
