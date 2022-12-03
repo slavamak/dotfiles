@@ -3,6 +3,7 @@ if not mason_lsp_status then return end
 
 local lsp = require 'lspconfig'
 local util = require 'lspconfig.util'
+local ui = require 'lspconfig.ui.windows'
 local capabilities = require('cmp_nvim_lsp').default_capabilities()
 
 local on_attach = function(client, bufnr)
@@ -17,6 +18,8 @@ local on_attach = function(client, bufnr)
   buf_set_keymap('n', 'gi', '<cmd>lua vim.lsp.buf.implementation()<CR>', opts)
   buf_set_keymap('n', '<leader>lf', '<cmd>lua vim.lsp.buf.format()<CR>', opts)
 end
+
+ui.default_options.border = 'rounded'
 
 mason_lsp.setup {
   automatic_installation = true,

@@ -92,7 +92,7 @@ local function button(sc, txt, keybind)
     cursor = 5,
     width = 20,
     align_shortcut = 'right',
-    hl_shortcut = 'Identifier',
+    hl_shortcut = 'Statement',
     hl = 'Constant',
   }
 

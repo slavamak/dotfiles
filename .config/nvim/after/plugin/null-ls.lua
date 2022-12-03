@@ -13,6 +13,7 @@ local lsp_formatting = function(bufnr)
 end
 
 null_ls.setup {
+  border = 'rounded',
   sources = {
     null_ls.builtins.code_actions.eslint_d,
     null_ls.builtins.completion.spell,
