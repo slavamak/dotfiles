@@ -45,15 +45,16 @@ endif
 
 copy:
 	-mkdir -p ~/.config
-	cp -R $(CURRENT_DIR)/.asdfrc ~/.asdfrc
-	cp -R $(CURRENT_DIR)/.tool-versions ~/.tool-versions
-	cp -R $(CURRENT_DIR)/.gitconfig ~/.gitconfig
-	cp -R $(CURRENT_DIR)/.gitignore ~/.gitignore
-	cp -R $(CURRENT_DIR)/.config/tmux/tmux.conf ~/.tmux.conf
-	cp -R $(CURRENT_DIR)/.config/zsh/.zshrc ~/.zshrc
-	cp -R $(CURRENT_DIR)/.config/zsh/custom ~/.config/zsh_custom
-	cp -R $(CURRENT_DIR)/.config/tmux ~/.config/tmux
-	cp -R $(CURRENT_DIR)/.config/nvim ~/.config/nvim
+	cp -R $(CURRENT_DIR)/.asdfrc ~/
+	cp -R $(CURRENT_DIR)/.tool-versions ~/
+	cp -R $(CURRENT_DIR)/.gitconfig ~/
+	cp -R $(CURRENT_DIR)/.gitignore ~/
+	cp -R $(CURRENT_DIR)/.stylua.toml ~/
+	cp -R $(CURRENT_DIR)/.config/tmux/.tmux.conf ~/
+	cp -R $(CURRENT_DIR)/.config/zsh/.zshrc ~/
+	cp -R $(CURRENT_DIR)/.config/zsh/zsh_custom ~/.config/
+	cp -R $(CURRENT_DIR)/.config/tmux ~/.config/
+	cp -R $(CURRENT_DIR)/.config/nvim ~/.config/
 
 clean:
 	-rm -rf ~/.config/tmux
