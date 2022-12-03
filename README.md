@@ -84,6 +84,7 @@ Requires Neovim version >= 0.8.0
 - [rcarriga/nvim-notify](https://github.com/rcarriga/nvim-notify) -- Notification manager
 - [lukas-reineke/indent-blankline.nvim](https://github.com/lukas-reineke/indent-blankline.nvim) -- Indentation guides to all lines
 - [goolord/alpha-nvim](https://github.com/goolord/alpha-nvim) - A beautiful greeting
+- ['xiyaowong/virtcolumn.nvim'](https://github.com/xiyaowong/virtcolumn.nvim) -- Display a line as the colorcolumn
 
 ## iTerm
 

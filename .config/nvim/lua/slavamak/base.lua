@@ -20,6 +20,7 @@ vim.opt.number = true
 vim.opt.showmatch = true
 vim.opt.cursorline = true
 vim.opt.hlsearch = true
+vim.opt.colorcolumn = '80'
 
 -- Syntax support for postcss files
 vim.api.nvim_create_autocmd({ 'Bufread', 'BufNewFile' }, {

@@ -13,6 +13,7 @@ packer.startup(function(use)
   use 'norcalli/nvim-colorizer.lua' -- A high-performance color highlighter
   use 'projekt0n/github-nvim-theme' -- Github color themes
   use 'nvim-lualine/lualine.nvim' -- Statusline
+  use 'xiyaowong/virtcolumn.nvim' -- Display a line as the colorcolumn
 
   use 'onsails/lspkind-nvim' -- Adds vscode-like pictograms
   use 'L3MON4D3/LuaSnip' -- A snippet engine
