@@ -23,6 +23,7 @@ null_ls.setup {
     null_ls.builtins.formatting.stylelint,
     -- For eslint and stylelint prettier runs via plugin
     null_ls.builtins.formatting.prettierd.with {
+      extra_filetypes = { 'liquid' },
       disabled_filetypes = {
         'css',
         'javascript',
