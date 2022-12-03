@@ -8,12 +8,33 @@ github_theme.setup {
   keyword_style = 'NONE',
   function_style = 'NONE',
   variable_style = 'NONE',
-  theme_style = 'light_default',
-
+  theme_style = 'light',
+  dark_float = true,
+  dark_sidebar = true,
+  colors = {
+    bg_highlight = '#f6f8fa',
+    line_nr = '#babbbc',
+  },
+  dev = true,
   overrides = function(c)
     return {
-      htmlArg = { fg = c.magenta },
-      TSOperator = { fg = c.syntax.string },
+      htmlArg = { fg = c.syntax.func },
+      htmlTitle = { fg = c.fg, style = 'NONE' },
+      htmlSpecialChar = { fg = c.syntax.func },
+      htmlSpecialTagName = { fg = c.syntax.tag },
+      javaScript = { fg = c.fg },
+      javaScriptBraces = { link = 'javaScript' },
+      javaScriptGlobal = { fg = c.syntax.constant },
+      javaScriptMember = { fg = c.syntax.constant },
+      liquidExpression = { fg = c.syntax.constant },
+      liquidDelimiter = { fg = c.fg },
+      liquidQuote = { link = 'liquidString' },
+      liquidKeyword = { fg = c.syntax.tag },
+
+      LspInfoBorder = { link = 'TelescopeBorder' },
+      NullLsInfoBorder = { link = 'TelescopeBorder' },
+
+      VirtColumn = { fg = c.bg_visual },
     }
   end,
 }
