@@ -32,6 +32,8 @@ github_theme.setup {
       liquidKeyword = { fg = c.syntax.tag },
 
       LspInfoBorder = { link = 'TelescopeBorder' },
+      LspSagaHoverBorder = { fg = c.fg_gutter },
+      LspSagaCodeActionBorder = { link = 'LspSagaHoverBorder' },
       NullLsInfoBorder = { link = 'TelescopeBorder' },
 
       VirtColumn = { fg = c.bg_visual },

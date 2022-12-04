@@ -5,6 +5,14 @@ if not status then
   return
 end
 
+packer.init {
+  display = {
+    open_fn = function()
+      return require('packer.util').float { border = 'rounded' }
+    end,
+  },
+}
+
 packer.startup(function(use)
   use 'wbthomason/packer.nvim' -- Plugin manager
   use 'nvim-lua/plenary.nvim' -- Lua functions for Neovim
