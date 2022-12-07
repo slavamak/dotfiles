@@ -71,5 +71,5 @@ oh-my-zsh:
 	sh -c "$$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)" "" --keep-zshrc
 
 node-packages:
-	npm i -g @shopify/cli @shopify/theme
+	npm i -g @shopify/cli @shopify/theme pnpm
 	# npm i -g tree-sitter-cli

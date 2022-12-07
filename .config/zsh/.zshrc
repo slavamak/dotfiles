@@ -42,6 +42,7 @@ alias ls="ls -p -G"
 alias la="ls -A"
 alias ll="ls -l"
 alias lla="ll -A"
+alias pn="pnpm"
 alias vim="nvim"
 
 if which exa >/dev/null; then
