@@ -20,10 +20,8 @@ ifeq ($(UNAME), Linux)
 	@echo 'Preparations to install Ubuntu packages has started..'
 	sudo apt update -yy
 	sudo apt upgrade -yy
-	sudo apt install -yy software-properties-common
-	sudo add-apt-repository -yy ppa:neovim-ppa/unstable
 	@echo 'Installing..'
-	sudo apt install -yy build-essential checkinstall curl dirmngr exa fd-find fzf gawk gpg gcc g++ gh git htop neovim ripgrep tmux zlib1g-dev zsh
+	sudo apt install -yy build-essential checkinstall curl dirmngr exa fd-find fzf gawk gpg gcc g++ gh git htop ripgrep tmux zlib1g-dev zsh
 	git clone --filter=blob:none --sparse https://github.com/ryanoasis/nerd-fonts.git
 	cd nerd-fonts; \
 		git sparse-checkout add patched-fonts/Iosevka
@@ -40,7 +38,7 @@ ifeq ($(UNAME), Linux)
 	@echo 'Ubuntu package update has started..'
 	sudo apt update -yy
 	sudo apt upgrade -yy
-	sudo apt install -yy curl dirmngr exa fd-find fzf gawk gpg gcc g++ gh git htop neovim ripgrep tmux zsh
+	sudo apt install -yy curl dirmngr exa fd-find fzf gawk gpg gcc g++ gh git htop ripgrep tmux zsh
 endif
 
 copy:

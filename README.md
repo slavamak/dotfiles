@@ -10,6 +10,7 @@ Make sure to these package is installed to your system:
 
 - `git`
 - `make`
+- `neovim`
 
 ## Contents
 
