@@ -50,6 +50,15 @@ if which exa >/dev/null; then
   alias lla="ll -a"
 fi
 
+# Load bash aliases and settings, if presented
+if [ -f ~/.bash_aliases ]; then
+  source ~/.bash_aliases
+fi
+
+if [ -f ~/.bash_profile ]; then
+  source ~/.bash_profile
+fi
+
 # Set your language environment
 export LANG=en_US.UTF-8
 export LC_ALL=en_US.UTF-8
