@@ -4,7 +4,7 @@ if not status then return end
 local parser_config = require('nvim-treesitter.parsers').get_parser_configs()
 parser_config.liquid = {
   install_info = {
-    url = 'https://github.com/Shopify/tree-sitter-liquid-ii.git',
+    url = 'https://github.com/Shopify/tree-sitter-liquid.git',
     files = { 'src/parser.c' },
     branch = 'main',
   },
