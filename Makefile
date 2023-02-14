@@ -63,6 +63,8 @@ clean:
 asdf:
 	-rm -rf ~/.asdf
 	git clone https://github.com/asdf-vm/asdf.git ~/.asdf
+
+asdf-plugins:
 	asdf plugin add nodejs https://github.com/asdf-vm/asdf-nodejs.git
 	asdf plugin add ruby https://github.com/asdf-vm/asdf-ruby.git
 	asdf install
