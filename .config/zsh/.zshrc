@@ -42,10 +42,27 @@ alias ls="ls -p -G"
 alias la="ls -A"
 alias ll="ls -l"
 alias lla="ll -A"
-alias pn="pnpm"
 alias vim="nvim"
 
-if which exa >/dev/null; then
+function exists() {
+  command -v "$1" >/dev/null 2>&1
+}
+
+# Create symlink for node_modules directory after installing dependencies
+# https://www.npmjs.com/package/nosync-icloud
+function pn() {
+  if exists ns; then
+    if [ $1 = "i" ] || [ $1 = "install" ]; then
+      pnpm $@ && ns
+    else
+      pnpm $@
+    fi
+  else
+    pnpm $@
+  fi
+}
+
+if exists exa; then
   alias ll="exa -l -g --icons"
   alias lla="ll -a"
 fi
@@ -64,3 +81,7 @@ export LANG=en_US.UTF-8
 export LC_ALL=en_US.UTF-8
 
 export EDITOR=nvim
+
+# Set pnpm environment
+export PNPM_HOME=$HOME/Library/pnpm
+export PATH=$PNPM_HOME:$PATH
