@@ -34,11 +34,14 @@ cd dotfiles
 # this will install iterm, neovim, tmux, zsh, oh-my-zsh and more
 make
 
+# install asdf runtime version manager
+make asdf
+
 # reload shell with new configuration
 source ~/.zshrc
 
-# install nodejs and ruby with asdf version manager
-make asdf
+# install nodejs and ruby with asdf
+make asdf-plugins
 
 # optional
 make node-packages
