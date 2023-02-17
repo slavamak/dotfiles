@@ -42,25 +42,15 @@ alias ls="ls -p -G"
 alias la="ls -A"
 alias ll="ls -l"
 alias lla="ll -A"
-alias vim="nvim"
+alias pn="pnpm"
 
 function exists() {
   command -v "$1" >/dev/null 2>&1
 }
 
-# Create symlink for node_modules directory after installing dependencies
-# https://www.npmjs.com/package/nosync-icloud
-function pn() {
-  if exists ns; then
-    if [ $1 = "i" ] || [ $1 = "install" ]; then
-      pnpm $@ && ns
-    else
-      pnpm $@
-    fi
-  else
-    pnpm $@
-  fi
-}
+if exists nvim; then
+  alias vim="nvim"
+fi
 
 if exists exa; then
   alias ll="exa -l -g --icons"
