@@ -42,9 +42,6 @@ source ~/.zshrc
 
 # install nodejs and ruby with asdf
 make asdf-plugins
-
-# optional
-make node-packages
 ```
 
 ## Neovim
@@ -102,12 +99,14 @@ Base configuration, key bindings and colors theme
 
 With zsh also installs **oh-my-zsh** - framework for managing configuration. This framework includes few plugins:
 
+- autoupdate
 - asdf
 - gh
 - git
 - macos/ubuntu *(uncomment the appropriate one in the file [.zshrc](https://github.com/slavamak/dotfiles/blob/main/.config/zsh/.zshrc))*
 - tmux
 - z
+- zsh-syntax-highlighting
 
 Read the documentation on these and other plugins [here](https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins)
 
