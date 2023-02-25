@@ -4,6 +4,9 @@
 # Path to your oh-my-zsh installation.
 export ZSH=$HOME/.oh-my-zsh
 
+# Set peroid to auto update oh-my-zsh plugins
+export UPDATE_ZSH_DAYS=7
+
 # Set name of the theme to load --- if set to "random", it will
 # load a random theme each time oh-my-zsh is loaded, in which case,
 # to know which specific one was loaded, run: echo $RANDOM_THEME
@@ -25,6 +28,7 @@ ZSH_CUSTOM=$HOME/.config/zsh_custom/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
 plugins=(
+  autoupdate
   asdf
   gh
   git
@@ -32,6 +36,7 @@ plugins=(
   # ubuntu
   tmux
   z
+  zsh-syntax-highlighting
 )
 
 # Actually load Oh-My-Zsh
@@ -70,6 +75,7 @@ fi
 export LANG=en_US.UTF-8
 export LC_ALL=en_US.UTF-8
 
+# Set default editor
 export EDITOR=nvim
 
 # Set pnpm environment
