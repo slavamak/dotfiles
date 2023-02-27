@@ -27,7 +27,7 @@ mason_lsp.setup {
     'astro',
     'cssls',
     'html',
-    'sumneko_lua',
+    'lua_ls',
     'tailwindcss',
     'theme_check',
     'tsserver',
@@ -41,8 +41,8 @@ mason_lsp.setup_handlers {
       capabilities = capabilities,
     }
   end,
-  ['sumneko_lua'] = function()
-    lsp.sumneko_lua.setup {
+  ['lua_ls'] = function()
+    lsp.lua_ls.setup {
       on_attach = on_attach,
       capabilities = capabilities,
       settings = {
