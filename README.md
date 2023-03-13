@@ -106,6 +106,7 @@ With zsh also installs **oh-my-zsh** - framework for managing configuration. Thi
 - macos/ubuntu *(uncomment the appropriate one in the file [.zshrc](https://github.com/slavamak/dotfiles/blob/main/.config/zsh/.zshrc))*
 - tmux
 - z
+- zsh-autosuggestions
 - zsh-syntax-highlighting
 
 Read the documentation on these and other plugins [here](https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins)

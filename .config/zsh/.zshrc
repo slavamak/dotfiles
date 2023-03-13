@@ -36,6 +36,7 @@ plugins=(
   # ubuntu
   tmux
   z
+  zsh-autosuggestions
   zsh-syntax-highlighting
 )
 
