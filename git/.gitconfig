@@ -1,6 +1,6 @@
 [core]
   excludesfile = ~/.gitignore
-  editor = nvim
+  editor = vim
   ignorecase = false
 [push]
   default = simple
