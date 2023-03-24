@@ -1,7 +1,3 @@
-![nvim screenshot](./neovim.png)
-
-![nvim screenshot](./highlights.png)
-
 # Configurations for MacOS/Ubuntu
 
 ## Requirements
@@ -9,7 +5,7 @@
 Make sure to these package is installed to your system:
 
 - `git`
-- `make`
+- `zsh`
 - `neovim`
 
 ## Contents
@@ -19,8 +15,9 @@ Includes configurations for:
 - [iTerm](https://iterm2.com/)
 - [Neovim](https://neovim.io/)
 - [Tmux](https://github.com/tmux/tmux)
-- [zsh](https://www.zsh.org/)
-- [oh-my-zsh](https://github.com/ohmyzsh/ohmyzsh)
+- [Starship](https://starship.rs/)
+- [Zsh](https://www.zsh.org/)
+- [Karabiner](https://karabiner-elements.pqrs.org/)
 
 ## How to use
 
@@ -29,19 +26,7 @@ Run these commands in your terminal:
 ```sh
 git clone git@github.com:slavamak/dotfiles.git
 cd dotfiles
-
-# preparations and install core packages
-# this will install iterm, neovim, tmux, zsh, oh-my-zsh and more
-make
-
-# install asdf runtime version manager
-make asdf
-
-# reload shell with new configuration
-source ~/.zshrc
-
-# install nodejs and ruby with asdf
-make asdf-plugins
+./install.sh
 ```
 
 ## Neovim
@@ -95,22 +80,21 @@ Settings and colors theme
 
 Base configuration, key bindings and colors theme
 
-## zsh
+## Zsh
 
-With zsh also installs **oh-my-zsh** - framework for managing configuration. This framework includes few plugins:
+With zsh also installs [zap-zsh](https://github.com/zap-zsh/zap) - is a minimal zsh plugin manager.
 
-- autoupdate
-- asdf
-- gh
-- git
-- macos/ubuntu *(uncomment the appropriate one in the file [.zshrc](https://github.com/slavamak/dotfiles/blob/main/.config/zsh/.zshrc))*
-- tmux
-- z
-- zsh-autosuggestions
-- zsh-syntax-highlighting
+### Plugins
 
-Read the documentation on these and other plugins [here](https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins)
+- [zsh-autosuggestions](https://github.com/zsh-users/zsh-autosuggestions)
+- [zsh-completions](https://github.com/zsh-users/zsh-completions)
+- [zsh-syntax-highlighting](https://github.com/zsh-users/zsh-syntax-highlighting)
+- [zsh-z](https://github.com/agkozak/zsh-z)
 
-## Thanks
+## Karabiner
 
-Thanks a lot for the inspiration [craftzdog](https://github.com/craftzdog), [mokevnin](https://github.com/mokevnin) and the other cool folks at github :)
+A few simple key mappings:
+
+- Swap `CAPSLOCK` with `LEFT CONTROL`
+- Map `CONTROL + [` to `ESCAPE`
+- Map `CONTROL + HJKL` to arrow keys (like vim)
