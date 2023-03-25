@@ -5,8 +5,8 @@ $username\
 $hostname\
 $directory\
 $git_branch\
-$git_state\
 $git_status\
+$git_state\
 $cmd_duration\
 $line_break\
 $battery\
@@ -24,22 +24,31 @@ ssh_only = false
 format = "[$hostname](yellow) "
 
 [directory]
-format = "in [$path](green) "
+format = "in [$path](green)"
 
 [git_branch]
-format = "on [$branch]($style)"
+format = " on [$symbol$branch]($style)"
 style = "bright-black"
 
 [git_status]
-format = "[[(*$conflicted$untracked$modified$staged$renamed$deleted)](red) ($ahead_behind $stashed)]($style) "
+format = "[[(*$conflicted$untracked$modified$staged$renamed$deleted)](red) ($ahead_behind$stashed)]($style)"
 style = "bright-black"
+ahead = '⇡${count}'
+diverged = '⇡${ahead_count}⇣${behind_count}'
+behind = '⇣${count}'
+conflicted = "​"
+untracked = "​"
+modified = "​"
+renamed = "​"
+deleted = "​"
+stashed = '[≡](red)'
 
 [git_state]
-format = '\([$state( $progress_current/$progress_total)]($style)\) '
+format = ' \([$state( $progress_current/$progress_total)]($style)\)'
 style = "bright-black"
 
 [cmd_duration]
-format = "[$duration]($style) "
+format = " [$duration]($style)"
 style = "bright-yellow"
 
 [time]
