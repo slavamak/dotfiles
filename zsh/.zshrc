@@ -1,7 +1,6 @@
 [ -f "$HOME/.local/share/zap/zap.zsh" ] && source "$HOME/.local/share/zap/zap.zsh"
 
-autoload -U +X bashcompinit && bashcompinit
-autoload -U +X compinit && compinit
+source "$HOME/.config/zsh/completion.zsh"
 
 ASDF_DIR="${ASDF_DIR:-$HOME/.asdf}"
 ASDF_COMPLETIONS="$ASDF_DIR/completions"
