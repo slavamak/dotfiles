@@ -331,7 +331,7 @@
       "AWDS Pane Directory": "",
       "Blur": true,
       "Vertical Spacing": 1,
-      "Normal Font": "IosevkaNerdFontComplete 14",
+      "Normal Font": "IosevkaTermNerdFontComplete 14",
       "Ansi 7 Color": {
         "Red Component": 0.41568627450980389,
         "Color Space": "sRGB",
