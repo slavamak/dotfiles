@@ -15,7 +15,7 @@ $character"""
 
 [username]
 show_always = true
-format = "[$user]($style) at "
+format = "[$user]($style) [at](bright-black) "
 style_root = "bold red"
 style_user = "cyan"
 
@@ -24,11 +24,11 @@ ssh_only = false
 format = "[$hostname](yellow) "
 
 [directory]
-format = "in [$path](green)"
+format = "[in](bright-black) [$path](green)"
 
 [git_branch]
-format = " on [$symbol$branch]($style)"
-style = "bright-black"
+format = " [on](bright-black) [$symbol$branch]($style)"
+style = "none"
 
 [git_status]
 format = "[[(*$conflicted$untracked$modified$staged$renamed$deleted)](red) ($ahead_behind$stashed)]($style)"
