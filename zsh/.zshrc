@@ -47,10 +47,10 @@ if exists nvim; then
 fi
 
 if exists exa; then
-  alias ls="exa -1"
-  alias ll="exa -l"
-  alias lla="exa -la"
-  alias tree="exa -T"
+  alias ls="exa -1 --group-directories-first"
+  alias ll="exa -l --group-directories-first"
+  alias lla="exa -la --group-directories-first"
+  alias tree="exa -T --group-directories-first"
 fi
 
 export LANG="en_US.UTF-8"
