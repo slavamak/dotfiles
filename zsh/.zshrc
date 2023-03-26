@@ -39,7 +39,7 @@ plug "zsh-users/zsh-syntax-highlighting"
 alias ls="ls -p -G"
 alias la="ls -A"
 alias ll="ls -l"
-alias lla="ll -A"
+alias lla="ls -lA"
 alias pn="pnpm"
 
 if exists nvim; then
@@ -47,8 +47,10 @@ if exists nvim; then
 fi
 
 if exists exa; then
-  alias ll="exa -l -g --icons"
-  alias lla="ll -a"
+  alias ls="exa -1"
+  alias ll="exa -l"
+  alias lla="exa -la"
+  alias tree="exa -T"
 fi
 
 export LANG="en_US.UTF-8"
