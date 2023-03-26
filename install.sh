@@ -35,6 +35,7 @@ Darwin)
   brew install starship
 
   # Brew cask
+  brew install --cask font-iosevka
   brew install --cask font-iosevka-nerd-font
   brew install --cask min
   brew install --cask google-chrome
