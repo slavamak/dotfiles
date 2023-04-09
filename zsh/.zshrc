@@ -2,34 +2,19 @@
 
 source "$HOME/.config/zsh/completion.zsh"
 
-ASDF_DIR="${ASDF_DIR:-$HOME/.asdf}"
-ASDF_COMPLETIONS="$ASDF_DIR/completions"
+if [[ -f "$HOME/.asdf/asdf.sh" ]]; then
+  source "$HOME/.asdf/asdf.sh"
 
-if [[ -f "$ASDF_DIR/asdf.sh" ]]; then
-  source "$ASDF_DIR/asdf.sh"
-
-  if [[ -f "$ASDF_COMPLETIONS/asdf.bash" ]]; then
-    source "$ASDF_COMPLETIONS/asdf.bash"
+  if [[ -f "$HOME/.asdf/completions/asdf.bash" ]]; then
+    source "$HOME/.asdf/completions/asdf.bash"
   fi
-fi
-
-if [ -f "$HOME/.bash_aliases" ]; then
-  source "$HOME/.bash_aliases"
-fi
-
-if [ -f "$HOME/.bash_profile" ]; then
-  source "$HOME/.bash_profile"
 fi
 
 eval "$(starship init zsh)"
 
 function exists() {
-  command -v "$1" >/dev/null 2>&1
+  command -v "$1" > /dev/null 2>&1
 }
-
-HISTFILE="$HOME/.zsh_history"
-HISTSIZE=1000000
-SAVEHIST=1000000
 
 plug "agkozak/zsh-z"
 plug "zsh-users/zsh-autosuggestions"
@@ -53,6 +38,9 @@ if exists exa; then
   alias tree="exa -T --group-directories-first"
 fi
 
+export HISTFILE="$HOME/.zsh_history"
+export HISTSIZE=1000000
+export SAVEHIST=1000000
 export LANG="en_US.UTF-8"
 export LC_ALL="en_US.UTF-8"
 export EDITOR="vim"
