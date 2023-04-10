@@ -20,7 +20,7 @@ require('lazy').setup {
     lazy = false,
     version = false,
   },
-  install = { colorscheme = { 'tokyonight' } },
+  install = { colorscheme = { 'github-nvim-theme', 'tokyonight' } },
   checker = { enabled = true },
   ui = {
     border = 'rounded',
