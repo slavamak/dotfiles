@@ -9,8 +9,8 @@ function get_appearance()
 end
 
 function scheme_for_appearance(appearance)
-  if appearance:find 'Dark' then return 'tokyonight_night' end
-  return 'tokyonight_day'
+  if appearance:find 'Dark' then return 'GitHub Dark' end
+  return 'GitHub'
 end
 
 wezterm.on('window-config-reloaded', function(window, pane)
