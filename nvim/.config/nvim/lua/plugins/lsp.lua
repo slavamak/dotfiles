@@ -32,7 +32,6 @@ return {
   },
 
   { import = 'plugins.extras.coding.emmet' },
-  { import = 'plugins.extras.coding.tailwindcss' },
   { import = 'plugins.extras.formating.prettier' },
   { import = 'plugins.extras.formating.shfmt' },
   { import = 'plugins.extras.lang.astro' },
@@ -48,6 +47,7 @@ return {
   { import = 'plugins.extras.lang.yaml' },
   { import = 'plugins.extras.linting.stylelint' },
 
+  { import = 'lazyvim.plugins.extras.lang.tailwind' },
   { import = 'lazyvim.plugins.extras.lang.typescript' },
   { import = 'lazyvim.plugins.extras.lang.json' },
   { import = 'lazyvim.plugins.extras.linting.eslint' },
