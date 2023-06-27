@@ -34,11 +34,10 @@ case "$(uname -s)" in
     brew install starship
 
     # Brew cask
+    brew install --cask bitwarden
     brew install --cask font-iosevka
     brew install --cask font-iosevka-nerd-font
-    brew install --cask min
     brew install --cask google-chrome
-    brew install --cask raycast
     brew install --cask visual-studio-code
     brew install --cask iterm2-beta
     brew install --cask soundsource
@@ -56,7 +55,7 @@ case "$(uname -s)" in
 
     # Mac App Store Apps
     echo "Installing mac app store apps..."
-    mas install 1451685025 #Wireguard
+    mas install 1356178125 #Outline
     ;;
 
   Linux)
