@@ -14,6 +14,7 @@ case "$(uname -s)" in
     # Brew taps
     echo "Installing brew formulae..."
     brew tap homebrew/cask-fonts
+    brew tap homebrew/cask-versions
 
     # Brew formulae
     brew install exa
@@ -35,6 +36,7 @@ case "$(uname -s)" in
 
     # Brew cask
     brew install --cask bitwarden
+    brew install --cask figma
     brew install --cask font-iosevka
     brew install --cask font-iosevka-nerd-font
     brew install --cask google-chrome
@@ -56,6 +58,7 @@ case "$(uname -s)" in
     # Mac App Store Apps
     echo "Installing mac app store apps..."
     mas install 1356178125 #Outline
+    mas install 1291898086 #Toggle Track
     ;;
 
   Linux)
