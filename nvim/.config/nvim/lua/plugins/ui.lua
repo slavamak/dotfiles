@@ -163,6 +163,7 @@ return {
           {
             'filename',
             path = 0,
+            separator = icons.ui.chevron_right,
             padding = { left = 0, right = 1 },
             symbols = { modified = '  ', readonly = '', unnamed = '' },
           },
