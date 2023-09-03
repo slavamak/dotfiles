@@ -81,6 +81,19 @@ return {
   },
 
   {
+    'nvim-lualine/lualine.nvim',
+    opts = {
+      sections = {
+        lualine_z = {
+          function()
+            return ' ' .. os.date ' %I:%M %p'
+          end,
+        },
+      },
+    },
+  },
+
+  {
     'goolord/alpha-nvim',
     dependencies = {
       'nvim-tree/nvim-web-devicons',
