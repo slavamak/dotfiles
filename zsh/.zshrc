@@ -20,6 +20,7 @@ plug "agkozak/zsh-z"
 plug "zsh-users/zsh-autosuggestions"
 plug "zsh-users/zsh-completions"
 plug "zsh-users/zsh-syntax-highlighting"
+plug "MichaelAquilina/zsh-you-should-use"
 
 alias ls="ls -p -G"
 alias la="ls -A"
