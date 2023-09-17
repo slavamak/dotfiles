@@ -11,29 +11,12 @@ if not vim.loop.fs_stat(lazypath) then
 end
 vim.opt.rtp:prepend(vim.env.LAZY or lazypath)
 
-require('lazy').setup {
-  spec = {
-    { 'LazyVim/LazyVim', import = 'lazyvim.plugins' },
-    { import = 'plugins' },
-  },
+require('lazy').setup('plugins', {
   defaults = {
-    lazy = false,
-    version = false,
+    lazy = true,
   },
-  install = { colorscheme = { 'github_light', 'tokyonight' } },
-  checker = { enabled = true },
+  install = { colorscheme = { 'github_light', 'github_dark' } },
   ui = {
-    border = 'rounded',
+    border = vim.g.border_chars,
   },
-  performance = {
-    rtp = {
-      disabled_plugins = {
-        'gzip',
-        'tarPlugin',
-        'tohtml',
-        'tutor',
-        'zipPlugin',
-      },
-    },
-  },
-}
+})
