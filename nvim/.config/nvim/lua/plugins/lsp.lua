@@ -13,12 +13,17 @@ return {
     event = { 'BufReadPre', 'BufNewFile' },
     dependencies = {
       { 'VonHeikemen/lsp-zero.nvim', branch = 'v3.x' },
-      { 'williamboman/mason.nvim', build = ':MasonUpdate', cmd = { 'Mason' }, opts = {} },
+      {
+        'williamboman/mason.nvim',
+        build = ':MasonUpdate',
+        cmd = { 'Mason' },
+        opts = {},
+      },
       { 'williamboman/mason-lspconfig.nvim' },
       { 'folke/neodev.nvim' },
       { 'b0o/schemastore.nvim' },
     },
-    init = function()
+    config = function()
       require('lspconfig.ui.windows').default_options.border = vim.g.border_chars
       vim.api.nvim_set_hl(0, 'LspInfoBorder', { link = 'FloatBorder' })
     end,
@@ -106,13 +111,11 @@ return {
           preserve_mappings = false,
         }
 
-        local key_opts = { buffer = buffer }
+        local bind = require('util').bind { buffer = bufnr }
 
-        vim.keymap.set('n', '<leader>rn', vim.lsp.buf.rename, key_opts)
-        vim.keymap.set('n', '<leader>f', function()
-          vim.lsp.buf.format { async = true }
-        end, key_opts)
-        vim.keymap.set('n', '<leader>ca', vim.lsp.buf.code_action, key_opts)
+        bind('n', '<leader>rn', vim.lsp.buf.rename, 'Rename Symbol')
+        bind('n', '<leader>ca', vim.lsp.buf.code_action, 'Code Action')
+        bind('n', '<leader>f', vim.lsp.buf.format, 'Format Code')
       end)
 
       local handlers = { lsp_zero.default_setup }
@@ -137,7 +140,7 @@ return {
 
   {
     'hrsh7th/nvim-cmp',
-    -- event = 'InsertEnter',
+    event = 'InsertEnter',
     dependencies = {
       { 'hrsh7th/cmp-nvim-lsp' },
       { 'L3MON4D3/LuaSnip' },
