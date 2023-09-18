@@ -1,13 +1,14 @@
 return {
   { 'nvim-treesitter/nvim-treesitter-context' },
 
-  { 'nvim-treesitter/playground' },
-
   {
     'nvim-treesitter/nvim-treesitter',
     build = ':TSUpdate',
     cmd = { 'TSUpdate' },
     event = { 'BufReadPost', 'BufNewFile' },
+    dependencies = {
+      { 'nvim-treesitter/playground' },
+    },
     opts = {
       auto_install = true,
       ensure_installed = {
@@ -40,6 +41,9 @@ return {
         enable = true,
       },
       indent = {
+        enable = true,
+      },
+      playground = {
         enable = true,
       },
     },
