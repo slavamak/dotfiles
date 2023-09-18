@@ -39,4 +39,10 @@ return {
     event = { 'BufReadPre', 'BufNewFile' },
     config = true,
   },
+
+  {
+    'windwp/nvim-autopairs',
+    event = 'InsertEnter',
+    config = true,
+  },
 }
