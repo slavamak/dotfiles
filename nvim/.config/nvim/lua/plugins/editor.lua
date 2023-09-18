@@ -27,4 +27,16 @@ return {
       bind('n', '<leader>fk', '<cmd>Telescope keymaps<cr>', 'Keymaps List')
     end,
   },
+
+  {
+    'numToStr/Comment.nvim',
+    event = { 'BufReadPre', 'BufNewFile' },
+    config = true,
+  },
+
+  {
+    'kylechui/nvim-surround',
+    event = { 'BufReadPre', 'BufNewFile' },
+    config = true,
+  },
 }
