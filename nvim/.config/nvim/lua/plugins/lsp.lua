@@ -1,9 +1,9 @@
 return {
   {
     'folke/neodev.nvim',
-    opts = {},
+    config = true,
     dependencies = {
-      { 'folke/neoconf.nvim', opts = {} },
+      { 'folke/neoconf.nvim', config = true },
     },
   },
 
@@ -17,7 +17,7 @@ return {
         'williamboman/mason.nvim',
         build = ':MasonUpdate',
         cmd = { 'Mason' },
-        opts = {},
+        config = true,
       },
       { 'williamboman/mason-lspconfig.nvim' },
       { 'folke/neodev.nvim' },
