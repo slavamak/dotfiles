@@ -11,9 +11,7 @@ return {
         variables = 'NONE',
       },
     },
-    config = function(_, opts)
-      require('github-theme').setup(opts)
-
+    config = function()
       vim.cmd 'colorscheme github_light'
     end,
   },
