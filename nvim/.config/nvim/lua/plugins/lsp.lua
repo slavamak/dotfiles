@@ -8,25 +8,28 @@ return {
   },
 
   {
+    'williamboman/mason.nvim',
+    build = ':MasonUpdate',
+    cmd = { 'Mason' },
+    opts = {
+      ui = {
+        border = vim.g.border_chars,
+      },
+    },
+    config = true,
+  },
+
+  {
     'neovim/nvim-lspconfig',
     cmd = { 'LspInfo', 'LspInstall', 'LspStart' },
     event = { 'BufReadPre', 'BufNewFile' },
     dependencies = {
       { 'VonHeikemen/lsp-zero.nvim', branch = 'v3.x' },
-      {
-        'williamboman/mason.nvim',
-        build = ':MasonUpdate',
-        cmd = { 'Mason' },
-        config = true,
-      },
+      { 'williamboman/mason.nvim' },
       { 'williamboman/mason-lspconfig.nvim' },
       { 'folke/neodev.nvim' },
       { 'b0o/schemastore.nvim' },
     },
-    config = function()
-      require('lspconfig.ui.windows').default_options.border = vim.g.border_chars
-      vim.api.nvim_set_hl(0, 'LspInfoBorder', { link = 'FloatBorder' })
-    end,
     opts = {
       servers = {
         astro = {},
