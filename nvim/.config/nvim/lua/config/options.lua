@@ -32,3 +32,6 @@ vim.opt.swapfile = false
 vim.opt.backup = false
 vim.opt.undofile = true
 vim.opt.undodir = os.getenv 'HOME' .. '/.cache/nvim/undodir'
+
+vim.opt.spelllang = 'en_us'
+vim.opt.spell = true
