@@ -113,9 +113,9 @@ return {
 
         local bind = require('util').bind { buffer = bufnr }
 
-        bind('n', '<leader>rn', vim.lsp.buf.rename, 'Rename Symbol')
-        bind('n', '<leader>ca', vim.lsp.buf.code_action, 'Code Action')
-        bind('n', '<leader>f', vim.lsp.buf.format, 'Format Code')
+        bind('n', '<leader>rn', vim.lsp.buf.rename, 'Rename symbol')
+        bind('n', '<leader>ca', vim.lsp.buf.code_action, 'Code action')
+        bind('n', '<leader>f', vim.lsp.buf.format, 'Format code')
       end)
 
       local handlers = { lsp_zero.default_setup }
