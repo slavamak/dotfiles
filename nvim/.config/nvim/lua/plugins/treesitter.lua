@@ -1,5 +1,5 @@
 return {
-  { 'nvim-treesitter/nvim-treesitter-context' },
+  'nvim-treesitter/nvim-treesitter-context',
 
   {
     'nvim-treesitter/nvim-treesitter',
@@ -7,7 +7,7 @@ return {
     cmd = { 'TSUpdate' },
     event = { 'BufReadPost', 'BufNewFile' },
     dependencies = {
-      { 'nvim-treesitter/playground' },
+      'nvim-treesitter/playground',
     },
     opts = {
       auto_install = true,

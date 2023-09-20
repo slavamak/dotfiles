@@ -10,7 +10,7 @@ return {
   {
     'williamboman/mason.nvim',
     build = ':MasonUpdate',
-    cmd = { 'Mason' },
+    cmd = 'Mason',
     opts = {
       ui = {
         border = vim.g.border_chars,
@@ -25,10 +25,10 @@ return {
     event = { 'BufReadPre', 'BufNewFile' },
     dependencies = {
       { 'VonHeikemen/lsp-zero.nvim', branch = 'v3.x' },
-      { 'williamboman/mason.nvim' },
-      { 'williamboman/mason-lspconfig.nvim' },
-      { 'folke/neodev.nvim' },
-      { 'b0o/schemastore.nvim' },
+      'williamboman/mason.nvim',
+      'williamboman/mason-lspconfig.nvim',
+      'folke/neodev.nvim',
+      'b0o/schemastore.nvim',
     },
     opts = {
       servers = {
@@ -166,15 +166,15 @@ return {
     'hrsh7th/nvim-cmp',
     event = 'InsertEnter',
     dependencies = {
-      { 'hrsh7th/cmp-nvim-lsp' },
-      { 'L3MON4D3/LuaSnip' },
-      { 'rafamadriz/friendly-snippets' },
-      { 'hrsh7th/cmp-path' },
-      { 'hrsh7th/cmp-buffer' },
-      { 'saadparwaiz1/cmp_luasnip' },
-      { 'hrsh7th/cmp-nvim-lua' },
-      { 'f3fora/cmp-spell' },
-      { 'b0o/schemastore.nvim' },
+      'hrsh7th/cmp-nvim-lsp',
+      'hrsh7th/cmp-path',
+      'hrsh7th/cmp-buffer',
+      'hrsh7th/cmp-nvim-lua',
+      'f3fora/cmp-spell',
+      'saadparwaiz1/cmp_luasnip',
+      'b0o/schemastore.nvim',
+      'L3MON4D3/LuaSnip',
+      'rafamadriz/friendly-snippets',
     },
     config = function()
       local lsp_zero = require 'lsp-zero'
