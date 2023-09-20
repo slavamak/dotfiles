@@ -32,24 +32,26 @@ cd dotfiles
 
 ## Neovim
 
-Config is based on [LazyVim starter](https://github.com/LazyVim/starter). Check the LazyVim [documentation](https://www.lazyvim.org/) for more information
+Previously, I was using an pre-built configuration that had a lot of ui features and plugins. But I decided to drop it and make my own custom config without unnecessary plugins, only what I use most often. Config is based on [lazy.nvim](https://github.com/folke/lazy.nvim).
 
 ## iTerm, WezTerm
 
-Settings and colors theme
+Settings and colors theme.
 
 ## Tmux
 
-Base configuration with [Tmux Plugin Manager](https://github.com/tmux-plugins/tpm)
+Base configuration with [Tmux Plugin Manager](https://github.com/tmux-plugins/tpm).
 
 ### Plugins
 
-- [tmux-resurrect](https://github.com/tmux-plugins/tmux-resurrect) - Persists tmux environment across system restarts
-- [tmux-continuum](https://github.com/tmux-plugins/tmux-continuum) - Continuous saving of tmux environment
+- [tmux-resurrect](https://github.com/tmux-plugins/tmux-resurrect) - Persists tmux environment across system restarts.
+- [tmux-continuum](https://github.com/tmux-plugins/tmux-continuum) - Continuous saving of tmux environment.
+- [tmux-cpu](https://github.com/tmux-plugins/tmux-cpu) - Cpu percentage and icon indicator for Tmux.
+- [tmux-prefix-highlight](https://github.com/tmux-plugins/tmux-continuum) - Highlights when you press tmux prefix key.
 
 ## Zsh
 
-Base configuration with [zap-zsh](https://github.com/zap-zsh/zap) plugin manager
+Base configuration with [zap-zsh](https://github.com/zap-zsh/zap) plugin manager.
 
 ### Plugins
 
@@ -57,6 +59,7 @@ Base configuration with [zap-zsh](https://github.com/zap-zsh/zap) plugin manager
 - [zsh-completions](https://github.com/zsh-users/zsh-completions)
 - [zsh-syntax-highlighting](https://github.com/zsh-users/zsh-syntax-highlighting)
 - [zsh-z](https://github.com/agkozak/zsh-z)
+- [zsh-you-should-use](https://github.com/MichaelAquilina/zsh-you-should-use")
 
 ## Karabiner
 
