@@ -108,17 +108,28 @@ return {
       lsp_zero.extend_lspconfig()
 
       lsp_zero.on_attach(function(client, bufnr)
-        lsp_zero.default_keymaps {
-          buffer = bufnr,
-          exclude = { '<F2>', '<F3>', '<F4>' },
-          preserve_mappings = false,
-        }
-
         local bind = require('util').bind { buffer = bufnr }
 
-        bind('n', '<leader>rn', vim.lsp.buf.rename, 'Rename symbol')
-        bind('n', '<leader>ca', vim.lsp.buf.code_action, 'Code action')
+        bind('n', 'K', vim.lsp.buf.hover, '')
+        bind('n', '<leader>r', vim.lsp.buf.rename, 'Rename symbol')
         bind('n', '<leader>f', vim.lsp.buf.format, 'Format code')
+        bind('n', '<leader>ca', vim.lsp.buf.code_action, 'Code action')
+        bind('n', 'gs', vim.lsp.buf.signature_help, 'LSP signature help')
+        bind('n', 'gd', '<cmd>Telescope lsp_definitions<CR>', 'LSP definitions')
+        bind('n', 'gD', '<cmd>Telescope lsp_type_definitions<CR>', 'LSP type definitions')
+        bind('n', 'gI', '<cmd>Telescope lsp_implementations<CR>', 'LSP implementations')
+        bind('n', 'gr', '<cmd>Telescope lsp_references<CR>', 'LSP references')
+        bind('n', '<leader>d', '<cmd>Telescope diagnostics<cr>', 'LSP diagnostics')
+
+        if vim.lsp.buf.range_code_action then
+          bind('x', '<leader>ca', vim.lsp.buf.range_code_action, 'Code action')
+        else
+          bind('x', '<leader>ca', vim.lsp.buf.code_action, 'Code action')
+        end
+
+        bind('n', 'gl', vim.diagnostic.open_float, 'Open float diagnostic')
+        bind('n', '[d', vim.diagnostic.goto_prev, 'Go to previous diagnostic')
+        bind('n', ']d', vim.diagnostic.goto_next, 'Go to next diagnostic')
       end)
 
       local handlers = { lsp_zero.default_setup }

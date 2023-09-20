@@ -26,6 +26,7 @@ bind('n', '<leader>b', '<cmd>Telescope buffers<cr>', 'Buffer list')
 bind('n', '<leader>h', '<cmd>Telescope help_tags<cr>', 'Help tags')
 bind({ 'n', 'v' }, '<leader>gs', '<cmd>Telescope grep_string<cr>', 'Grep search')
 bind('n', '<leader>m', '<cmd>Telescope keymaps<cr>', 'Keymaps list')
+bind('n', 'z=', '<cmd>Telescope spell_suggest<cr>', 'Suggest spellings')
 
 bind('n', '<leader>j', '<cmd>bprevious<cr>', 'Go to previous buffer')
 bind('n', '<leader>k', '<cmd>bnext<cr>', 'Go to next buffer')
