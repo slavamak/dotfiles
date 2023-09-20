@@ -30,7 +30,7 @@ bind('n', 'z=', '<cmd>Telescope spell_suggest<cr>', 'Suggest spellings')
 
 bind('n', '<leader>j', '<cmd>bprevious<cr>', 'Go to previous buffer')
 bind('n', '<leader>k', '<cmd>bnext<cr>', 'Go to next buffer')
-bind('n', '<leader>c', '<cmd>bprevious <bar> bdelete #<cr>', 'Close buffer')
+bind('n', '<leader>bd', '<cmd>bprevious <bar> bdelete #<cr>', 'Close buffer')
 bind('n', '<leader>q', '<c-w>q', 'Quit a window')
 bind('n', '<leader>w', '<c-w>w', 'Switch windows')
 
