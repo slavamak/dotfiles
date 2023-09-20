@@ -37,7 +37,15 @@ return {
           filetypes = { 'sh', 'bash', 'zsh' },
         },
         cssls = {},
-        emmet_ls = {},
+        emmet_language_server = {},
+        eslint = {
+          on_attach = function(client, bufnr)
+            vim.api.nvim_create_autocmd('BufWritePre', {
+              buffer = bufnr,
+              command = 'EslintFixAll',
+            })
+          end,
+        },
         graphql = {},
         html = {},
         jsonls = {
@@ -84,6 +92,8 @@ return {
               or util.find_package_json_ancestor
           end,
         },
+        tsserver = {},
+        unocss = {},
         vuels = {},
         yamlls = {
           on_new_config = function(new_config)
