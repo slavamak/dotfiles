@@ -122,7 +122,7 @@ return {
 
         bind('n', 'K', vim.lsp.buf.hover, '')
         bind('n', '<Leader>r', vim.lsp.buf.rename, 'Rename symbol')
-        bind('n', '<Leader>f', vim.lsp.buf.format, 'Format code')
+        bind({ 'n', 'v' }, '<Leader>f', vim.lsp.buf.format, 'Format document')
         bind('n', '<Leader>ca', vim.lsp.buf.code_action, 'Code action')
         bind('n', 'gs', vim.lsp.buf.signature_help, 'LSP signature help')
         bind('n', 'gd', '<Cmd>Telescope lsp_definitions<Cr>', 'LSP definitions')
