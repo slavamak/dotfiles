@@ -4,7 +4,7 @@ return {
     cmd = 'UndotreeToggle',
     init = function()
       local bind = require('util').bind()
-      bind('n', '<leader>u', '<cmd>UndotreeToggle<cr>', 'Undotree toggle')
+      bind('n', '<Leader>u', '<Cmd>UndotreeToggle<Cr>', 'Undotree toggle')
     end,
     config = function()
       vim.g.undotree_SetFocusWhenToggle = 1
