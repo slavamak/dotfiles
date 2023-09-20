@@ -17,6 +17,7 @@ return {
     dependencies = {
       'nvim-lua/plenary.nvim',
       'nvim-tree/nvim-web-devicons',
+      'nvim-telescope/telescope-ui-select.nvim',
     },
     opts = function()
       local actions = require 'telescope.actions'
@@ -37,6 +38,9 @@ return {
           },
         },
       }
+    end,
+    config = function()
+      require('telescope').load_extension 'ui-select'
     end,
   },
 
