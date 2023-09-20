@@ -173,6 +173,7 @@ return {
       { 'hrsh7th/cmp-buffer' },
       { 'saadparwaiz1/cmp_luasnip' },
       { 'hrsh7th/cmp-nvim-lua' },
+      { 'f3fora/cmp-spell' },
       { 'b0o/schemastore.nvim' },
     },
     config = function()
@@ -191,6 +192,7 @@ return {
           { name = 'nvim_lua' },
           { name = 'buffer' },
           { name = 'path' },
+          { name = 'spell' },
         },
         formatting = lsp_zero.cmp_format(),
         mapping = cmp.mapping.preset.insert {
