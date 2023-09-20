@@ -121,20 +121,20 @@ return {
         local bind = require('util').bind { buffer = bufnr }
 
         bind('n', 'K', vim.lsp.buf.hover, '')
-        bind('n', '<leader>r', vim.lsp.buf.rename, 'Rename symbol')
-        bind('n', '<leader>f', vim.lsp.buf.format, 'Format code')
-        bind('n', '<leader>ca', vim.lsp.buf.code_action, 'Code action')
+        bind('n', '<Leader>r', vim.lsp.buf.rename, 'Rename symbol')
+        bind('n', '<Leader>f', vim.lsp.buf.format, 'Format code')
+        bind('n', '<Leader>ca', vim.lsp.buf.code_action, 'Code action')
         bind('n', 'gs', vim.lsp.buf.signature_help, 'LSP signature help')
-        bind('n', 'gd', '<cmd>Telescope lsp_definitions<CR>', 'LSP definitions')
-        bind('n', 'gD', '<cmd>Telescope lsp_type_definitions<CR>', 'LSP type definitions')
-        bind('n', 'gI', '<cmd>Telescope lsp_implementations<CR>', 'LSP implementations')
-        bind('n', 'gr', '<cmd>Telescope lsp_references<CR>', 'LSP references')
-        bind('n', '<leader>d', '<cmd>Telescope diagnostics<cr>', 'LSP diagnostics')
+        bind('n', 'gd', '<Cmd>Telescope lsp_definitions<Cr>', 'LSP definitions')
+        bind('n', 'gD', '<Cmd>Telescope lsp_type_definitions<Cr>', 'LSP type definitions')
+        bind('n', 'gI', '<Cmd>Telescope lsp_implementations<Cr>', 'LSP implementations')
+        bind('n', 'gr', '<Cmd>Telescope lsp_references<Cr>', 'LSP references')
+        bind('n', '<Leader>d', '<Cmd>Telescope diagnostics<Cr>', 'LSP diagnostics')
 
         if vim.lsp.buf.range_code_action then
-          bind('x', '<leader>ca', vim.lsp.buf.range_code_action, 'Code action')
+          bind('x', '<Leader>ca', vim.lsp.buf.range_code_action, 'Code action')
         else
-          bind('x', '<leader>ca', vim.lsp.buf.code_action, 'Code action')
+          bind('x', '<Leader>ca', vim.lsp.buf.code_action, 'Code action')
         end
 
         bind('n', 'gl', vim.diagnostic.open_float, 'Open float diagnostic')
