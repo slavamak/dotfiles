@@ -15,7 +15,8 @@ jobs:
       - name: Install configuration files
         run: |
           ls -1
-          ls -1 ../
+          ls -1a ../
+          ls -1a ~
           ./install.sh
         shell: zsh {0}
 
