@@ -16,6 +16,8 @@ jobs:
       - name: Clone repository
         run: |
           git clone https://github.com/slavamak/dotfiles.git ~/.dotfiles
+      - name: Install zsh
+        run: sudo apt-get update; sudo apt-get install zsh
       - name: Install configuration files
         run: |
           cd ~/.dotfiles
