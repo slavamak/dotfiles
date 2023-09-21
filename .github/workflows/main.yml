@@ -1,29 +1,28 @@
 name: GitHub Actions
-run-name: ${{ github.actor }} is testing out GitHub Actions 🚀
-on: [push]
+on:
+  push:
+    branches:
+      - main
+      - 'feature/**'
 jobs:
   ubuntu:
     runs-on: ubuntu-latest
     steps:
-      - run: echo "🎉 The job was automatically triggered by a ${{ github.event_name }} event."
-      - run: echo "🐧 This job is now running on a ${{ runner.os }} server hosted by GitHub!"
-      - run: echo "🔎 The name of your branch is ${{ github.ref }} and your repository is ${{ github.repository }}."
       - uses: actions/checkout@v4
-        with:
-          fetch-depth: 0
-      - name: Clone repository
-        run: |
-          git clone https://github.com/slavamak/dotfiles.git ~/.dotfiles
-      - name: Install zsh
-        run: |
-          sudo apt-get update
-          sudo apt-get install zsh
+      - name: Print commit SHA
+        run: echo Commit SHA is ${{ github.event.pull_request.head.sha }}
+      # - name: Clone repository
+      #   run: |
+      #     git clone https://github.com/slavamak/dotfiles.git ~/.dotfiles
+      # - name: Install zsh
+      #   run: |
+      #     sudo apt-get update
+      #     sudo apt-get install zsh
       - name: Install configuration files
         run: |
-          cd ~/.dotfiles
+          ls
           cat ./install.sh
         shell: zsh {0}
-      - run: echo "🍏 This job's status is ${{ job.status }}."
 
   # macos:
   #   runs-on: macos-latest
