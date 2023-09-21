@@ -1,4 +1,4 @@
-#!/bin/zsh
+#!/usr/bin/env zsh
 
 case "$(uname -s)" in
   Darwin)
@@ -100,6 +100,7 @@ esac
 # Create symlinks
 echo "Stowing configuration files..."
 stow asdf
+stow bin
 stow git
 stow keyboard
 stow nvim

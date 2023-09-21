@@ -1,0 +1,31 @@
+#!/usr/bin/env zsh
+
+# If a directory is supplied as an argument, use it. Otherwise, select a directory via fzf
+if [[ $# -eq 1 ]]; then
+  selected_dir=$1
+else
+  selected_dir=$(find ~/Development ~ -mindepth 1 -maxdepth 1 -type d | fzf)
+fi
+
+# Exit if no directory was selected
+if [[ -z $selected_dir ]]; then
+  exit 0
+fi
+
+# Extract the last part of the directory path
+basename_output=$(basename "$selected_dir")
+
+# Remove leading dot from the directory name for session name
+session_name="${basename_output#.}"
+
+# Create a new tmux session with the session name, if it doesn't already exist
+if ! tmux has-session -t=$session_name 2> /dev/null; then
+  tmux new-session -d -s $session_name -c $selected_dir
+fi
+
+# If tmux is not currently running, attach to the session. Otherwise, switch to it
+if [[ -z $TMUX ]]; then
+  tmux attach-session -t $session_name
+else
+  tmux switch-client -t $session_name
+fi
