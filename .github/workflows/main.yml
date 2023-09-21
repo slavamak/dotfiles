@@ -3,7 +3,7 @@ name: Main
 on:
   push:
     branches:
-      - "*"
+      - feature/add-zshenv
   # pull_request:
   #   branches:
   #     - main
