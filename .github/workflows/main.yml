@@ -1,16 +1,12 @@
 name: GitHub Actions
-on:
-  push:
-    branches:
-      - main
-      - 'feature/**'
+on: [push]
 jobs:
   ubuntu:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
       - name: Print commit SHA
-        run: echo Commit SHA is ${{ github.event.pull_request.head.sha }}
+        run: echo Commit SHA is ${{ github.sha }}
       # - name: Clone repository
       #   run: |
       #     git clone https://github.com/slavamak/dotfiles.git ~/.dotfiles
