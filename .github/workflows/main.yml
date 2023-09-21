@@ -1,8 +1,13 @@
-name: GitHub Actions
+name: Dotfiles Test
 on: [push]
 jobs:
   ubuntu:
+    name: Ubuntu Test
     runs-on: ubuntu-latest
+    defaults:
+      run:
+        shell: zsh
+        working-directory: ./.dotfiles
     steps:
       - uses: actions/checkout@v4
       - name: Print commit SHA
