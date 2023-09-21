@@ -16,24 +16,30 @@ function exists() {
   command -v "$1" > /dev/null 2>&1
 }
 
+function add_to_path() {
+  if [[ $PATH != *"$1"* ]]; then
+    export PATH=$1:$PATH
+  fi
+}
+
 plug "agkozak/zsh-z"
 plug "zsh-users/zsh-autosuggestions"
 plug "zsh-users/zsh-completions"
 plug "zsh-users/zsh-syntax-highlighting"
 plug "MichaelAquilina/zsh-you-should-use"
 
+bindkey -s ^f "tmux-sessionizer\n"
+
 alias ls="ls -p -G"
 alias la="ls -A"
 alias ll="ls -l"
 alias lla="ls -lA"
 alias pn="pnpm"
-
-if exists nvim; then
-  alias vim="nvim"
-fi
+alias vim="nvim"
 
 if exists exa; then
   alias ls="exa -1 --group-directories-first"
+  alias la="exa -1a --group-directories-first"
   alias ll="exa -l --group-directories-first"
   alias lla="exa -la --group-directories-first"
   alias tree="exa -T --group-directories-first"
@@ -44,7 +50,12 @@ export HISTSIZE=1000000
 export SAVEHIST=1000000
 export LANG="en_US.UTF-8"
 export LC_ALL="en_US.UTF-8"
-export EDITOR="vim"
 
+export EDITOR="nvim"
+export GIT_EDITOR="$EDITOR"
+export DOTFILES="$HOME/.dotfiles"
 export PNPM_HOME="$HOME/Library/pnpm"
-export PATH=$PNPM_HOME:"$HOME/bin":"/usr/local/bin":"$HOME/.local/bin":$PATH
+
+add_to_path "$PNPM_HOME"
+add_to_path "$HOME/.local/bin"
+add_to_path "$HOME/.local/scripts"
