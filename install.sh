@@ -101,15 +101,15 @@ esac
 
 # Create symlinks
 echo "Stowing configuration files..."
-stow asdf
-stow bin
-stow git
-stow keyboard
-stow nvim
-stow prompt
-stow terminal
-stow tmux
-stow zsh
+stow -t ~/ asdf
+stow -t ~/ bin
+stow -t ~/ git
+stow -t ~/ keyboard
+stow -t ~/ nvim
+stow -t ~/ prompt
+stow -t ~/ terminal
+stow -t ~/ tmux
+stow -t ~/ zsh
 
 # Install zsh-zap
 echo "Installing zsh plugin manager..."

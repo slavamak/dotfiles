@@ -14,10 +14,9 @@ jobs:
           sudo apt-get install zsh
       - name: Install configuration files
         run: |
-          ls -1
+          ./install.sh
           ls -1a ../
           ls -1a ~
-          ./install.sh
         shell: zsh {0}
 
   # macos:
