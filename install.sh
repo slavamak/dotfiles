@@ -123,8 +123,10 @@ source $HOME/.zshrc
 
 # Install asdf plugins
 echo "Installing asdf plugins..."
-asdf plugin add nodejs https://github.com/asdf-vm/asdf-nodejs.git
-asdf plugin add ruby https://github.com/asdf-vm/asdf-ruby.git
+asdf plugin add nodejs
+asdf plugin add ruby
+asdf plugin add rust
+asdf plugin add bun
 asdf install
 
 # Install nodejs packages
