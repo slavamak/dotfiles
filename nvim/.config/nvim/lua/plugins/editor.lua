@@ -19,28 +19,26 @@ return {
       'nvim-tree/nvim-web-devicons',
       'nvim-telescope/telescope-ui-select.nvim',
     },
-    opts = function()
+    config = function()
+      local telescope = require 'telescope'
       local actions = require 'telescope.actions'
 
-      return {
+      telescope.setup {
         defaults = {
           mappings = {
             i = {
-              ['<Down>'] = actions.preview_scrolling_left,
-              ['<Up>'] = actions.preview_scrolling_right,
-              ['<C-j>'] = actions.move_selection_next,
-              ['<C-k>'] = actions.move_selection_previous,
+              ['<Left>'] = actions.preview_scrolling_left,
+              ['<Right>'] = actions.preview_scrolling_right,
             },
             n = {
-              ['<Down>'] = actions.preview_scrolling_left,
-              ['<Up>'] = actions.preview_scrolling_right,
+              ['<Left>'] = actions.preview_scrolling_left,
+              ['<Right>'] = actions.preview_scrolling_right,
             },
           },
         },
       }
-    end,
-    config = function()
-      require('telescope').load_extension 'ui-select'
+
+      telescope.load_extension 'ui-select'
     end,
   },
 
