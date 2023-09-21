@@ -4,9 +4,6 @@ jobs:
   ubuntu:
     name: Ubuntu Test
     runs-on: ubuntu-latest
-    defaults:
-      run:
-        working-directory: ./.dotfiles
     steps:
       - uses: actions/checkout@v4
       - name: Print commit SHA
@@ -16,7 +13,10 @@ jobs:
           sudo apt-get update
           sudo apt-get install zsh
       - name: Install configuration files
-        run: ./install.sh
+        run: |
+          ls -1
+          ls -1 ../
+          ./install.sh
         shell: zsh {0}
 
   # macos:
