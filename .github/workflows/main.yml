@@ -15,7 +15,7 @@ jobs:
       - uses: actions/checkout@v2
       - name: Clone repository
         run: |
-          git clone git@github.com:slavamak/dotfiles.git ~/.dotfiles
+          git clone https://github.com/slavamak/dotfiles.git ~/.dotfiles
       - name: Install configuration files
         run: |
           cd ~/.dotfiles
