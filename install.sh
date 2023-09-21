@@ -93,7 +93,8 @@ case "$(uname -s)" in
     git clone --filter=blob:none --sparse https://github.com/ryanoasis/nerd-fonts.git
     cd nerd-fonts
     git sparse-checkout add patched-fonts/Iosevka
-    ./nerd-fonts/install.sh Iosevka
+    ./install.sh Iosevka
+    cd ..
     ;;
 esac
 
