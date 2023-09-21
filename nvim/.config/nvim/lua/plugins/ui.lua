@@ -20,4 +20,12 @@ return {
     'xiyaowong/virtcolumn.nvim',
     event = { 'BufReadPost', 'BufNewFile' },
   },
+
+  {
+    'lukas-reineke/indent-blankline.nvim',
+    event = { 'BufReadPost', 'BufNewFile' },
+    opts = {
+      show_current_context = true,
+    },
+  },
 }
