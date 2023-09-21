@@ -91,8 +91,11 @@ case "$(uname -s)" in
     # Install fonts
     echo "Installing nerd fonts..."
     git clone --filter=blob:none --sparse https://github.com/ryanoasis/nerd-fonts.git
+    ls -l
     cd nerd-fonts
+    ls -l
     git sparse-checkout add patched-fonts/Iosevka
+    ls -l
     ./install.sh Iosevka
     cd ..
     ;;
