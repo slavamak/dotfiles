@@ -6,27 +6,18 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
-      - name: Print commit SHA
-        run: echo Commit SHA is ${{ github.sha }}
       - name: Install zsh
         run: |
           sudo apt-get update
           sudo apt-get install zsh
       - name: Install configuration files
-        run: |
-          ./install.sh
-          ls -1a ../
-          ls -1a ~
+        run: ./install.sh
         shell: zsh {0}
 
-  # macos:
-  #   runs-on: macos-latest
-  #   steps:
-  #     - uses: actions/checkout@v2
-  #     - name: Install configuration files
-  #       run: |
-  #         make nvim-install
-
-  #     - name: Dotfiles install
-  #       run: |
-  #         make dotfiles-install
+  macos:
+    name: MacOS Test
+    runs-on: macos-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Install configuration files
+        run: ./install.sh

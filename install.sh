@@ -95,21 +95,20 @@ case "$(uname -s)" in
     git sparse-checkout add patched-fonts/Iosevka
     ./install.sh Iosevka
     cd ..
-    ls -l
     ;;
 esac
 
 # Create symlinks
 echo "Stowing configuration files..."
-stow -t ~/ asdf
-stow -t ~/ bin
-stow -t ~/ git
-stow -t ~/ keyboard
-stow -t ~/ nvim
-stow -t ~/ prompt
-stow -t ~/ terminal
-stow -t ~/ tmux
-stow -t ~/ zsh
+stow -t $HOME asdf
+stow -t $HOME bin
+stow -t $HOME git
+stow -t $HOME keyboard
+stow -t $HOME nvim
+stow -t $HOME prompt
+stow -t $HOME terminal
+stow -t $HOME tmux
+stow -t $HOME zsh
 
 # Install zsh-zap
 echo "Installing zsh plugin manager..."
