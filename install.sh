@@ -93,25 +93,26 @@ case "$(uname -s)" in
     git clone --filter=blob:none --sparse https://github.com/ryanoasis/nerd-fonts.git
     cd nerd-fonts
     git sparse-checkout add patched-fonts/Iosevka
-    ./nerd-fonts/install.sh Iosevka
+    ./install.sh Iosevka
+    cd ..
     ;;
 esac
 
 # Create symlinks
 echo "Stowing configuration files..."
-stow asdf
-stow bin
-stow git
-stow keyboard
-stow nvim
-stow prompt
-stow terminal
-stow tmux
-stow zsh
+stow -t $HOME asdf
+stow -t $HOME bin
+stow -t $HOME git
+stow -t $HOME keyboard
+stow -t $HOME nvim
+stow -t $HOME prompt
+stow -t $HOME terminal
+stow -t $HOME tmux
+stow -t $HOME zsh
 
 # Install zsh-zap
 echo "Installing zsh plugin manager..."
-zsh <(curl -s https://raw.githubusercontent.com/zap-zsh/zap/master/install.zsh)
+zsh <(curl -s https://raw.githubusercontent.com/zap-zsh/zap/master/install.zsh) --keep
 
 # Install asdf
 echo "Installing asdf..."

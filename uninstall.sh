@@ -1,11 +1,11 @@
 #!/usr/bin/env zsh
 
-stow -D asdf
-stow -D bin
-stow -D git
-stow -D keyboard
-stow -D nvim
-stow -D prompt
-stow -D terminal
-stow -D tmux
-stow -D zsh
+stow -t $HOME -D asdf
+stow -t $HOME -D bin
+stow -t $HOME -D git
+stow -t $HOME -D keyboard
+stow -t $HOME -D nvim
+stow -t $HOME -D prompt
+stow -t $HOME -D terminal
+stow -t $HOME -D tmux
+stow -t $HOME -D zsh
