@@ -4,6 +4,17 @@ function add_to_path() {
   fi
 }
 
+export FZF_DEFAULT_OPTS="
+  --height=~75%
+  --extended
+  --cycle
+  --border=rounded
+  --color=fg:-1,bg:-1,hl:-1
+  --color=fg+:-1,bg+:-1,hl+:-1
+  --color=info:-1,prompt:-1,pointer:-1
+  --color=marker:-1,spinner:-1,header:-1
+"
+
 export HISTFILE="$HOME/.zsh_history"
 export HISTSIZE=1000000
 export SAVEHIST=1000000
