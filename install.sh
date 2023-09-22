@@ -112,7 +112,7 @@ stow -t $HOME zsh
 
 # Install zsh-zap
 echo "Installing zsh plugin manager..."
-zsh <(curl -s https://raw.githubusercontent.com/zap-zsh/zap/master/install.zsh)
+zsh <(curl -s https://raw.githubusercontent.com/zap-zsh/zap/master/install.zsh) --keep
 
 # Install asdf
 echo "Installing asdf..."
