@@ -1,0 +1,3 @@
+- name: Uninstall configurations
+  ansible.builtin.command: stow -t {{ ansible_env.HOME }} -d {{ dotfiles_dir }} -D {{ item.path | basename }}
+  loop: "{{ config_dirs.files }}"

@@ -1,0 +1,17 @@
+- name: Install pnpm
+  community.general.npm:
+    name: pnpm
+    global: true
+    state: latest
+
+- name: Install shopify cli
+  community.general.pnpm:
+    name: "@shopify/cli"
+    global: true
+    state: latest
+
+- name: Install shopify theme
+  community.general.pnpm:
+    name: "@shopify/theme"
+    global: true
+    state: latest

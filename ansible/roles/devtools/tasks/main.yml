@@ -1,0 +1,11 @@
+- name: Install zsh
+  ansible.builtin.include_tasks: zsh.yml
+
+- name: Install asdf
+  ansible.builtin.include_tasks: asdf.yml
+
+- name: Install node
+  ansible.builtin.include_tasks: node.yml
+
+- name: Install neovim
+  ansible.builtin.include_tasks: neovim.yml

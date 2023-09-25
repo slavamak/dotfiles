@@ -1,0 +1,25 @@
+- name: Clone asdf repository
+  ansible.builtin.git:
+    repo: "https://github.com/asdf-vm/asdf.git"
+    dest: "{{ ansible_env.HOME }}/.asdf"
+    clone: yes
+    update: yes
+
+- name: Ensure that all asdf plugins are added
+  ansible.builtin.command: asdf plugin add {{ item }}
+  loop:
+    - ruby
+    - nodejs
+    - rust
+    - bun
+  args:
+    creates: "{{ ansible_env.HOME }}/.asdf/plugins/{{ item }}"
+  become: true
+  become_user: "{{ ansible_user_id }}"
+
+- name: Install all package versions listed in the .tool-versions file
+  ansible.builtin.command: asdf install
+  args:
+    chdir: "{{ ansible_env.HOME }}"
+  become: true
+  become_user: "{{ ansible_user_id }}"

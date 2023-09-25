@@ -1,0 +1,29 @@
+- name: Install apt packages
+  ansible.builtin.apt:
+    name:
+      - build-essential
+      - checkinstall
+      - curl
+      - cmake
+      - dirmngr
+      - exa
+      - fd-find
+      - fzf
+      - gawk
+      - gettext
+      - gpg
+      - gcc
+      - g++
+      - gh
+      - git
+      - htop
+      - libyaml-dev
+      - ninja-build
+      - ripgrep
+      - stow
+      - tmux
+      - unzip
+      - zlib1g-dev
+      - zsh
+    state: latest
+  become: true

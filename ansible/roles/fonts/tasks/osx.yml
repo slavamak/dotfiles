@@ -1,0 +1,12 @@
+- name: Tap a homebrew repository
+  community.general.homebrew_tap:
+    name: homebrew/cask-fonts
+    state: present
+
+- name: Install homebrew casks
+  community.general.homebrew_cask:
+    name:
+      - "font-{{ item }}"
+      - "font-{{ item }}-nerd-font"
+    state: latest
+  loop: "{{ [font] | flatten | map('replace', ' ', '-') | map('lower') }}"

@@ -1,0 +1,3 @@
+---
+rollback: false
+dotfiles_dir: "{{ ansible_env.HOME }}/.dotfiles"
