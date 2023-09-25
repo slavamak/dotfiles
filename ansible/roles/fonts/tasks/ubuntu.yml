@@ -1,3 +1,9 @@
+- name: Ensure Nerd Fonts installation directory exists
+  ansible.builtin.file:
+    path: "{{ nerd_fonts.dest }}"
+    state: directory
+  check_mode: false
+
 - name: Find files of previously installed nerd fonts
   ansible.builtin.find:
     paths: "{{ nerd_fonts.dest }}"

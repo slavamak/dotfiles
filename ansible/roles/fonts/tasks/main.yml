@@ -1,4 +1,4 @@
-- ansible.builtin.include_tasks: ubuntu.yml
+- ansible.builtin.include_tasks: osx.yml
   when: ansible_os_family == 'Darwin'
 
 - ansible.builtin.include_tasks: ubuntu.yml

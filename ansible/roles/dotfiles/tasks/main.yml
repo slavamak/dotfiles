@@ -9,7 +9,7 @@
 
 - name: Define directories
   ansible.builtin.find:
-    paths: "{{ dotfiles_dir }}"
+    paths: "{{ ansible_env.DOTFILES }}"
     recurse: no
     file_type: directory
     excludes: ansible

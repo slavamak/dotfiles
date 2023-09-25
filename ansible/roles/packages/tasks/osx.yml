@@ -2,7 +2,6 @@
   community.general.homebrew_tap:
     name: homebrew/cask-versions
     state: present
-  become: true
 
 - name: Install specified Homebrew packages
   community.general.homebrew:
@@ -28,7 +27,6 @@
       - starship
       - zsh
     state: latest
-  become: true
 
 - name: Install specific applications using Homebrew casks
   community.general.homebrew_cask:
@@ -45,7 +43,6 @@
       - telegram
       - karabiner-elements
     state: latest
-  become: true
 
 - name: Install specific applications from Mac App Store
   community.general.mas:
@@ -54,4 +51,3 @@
       - 1291898086 # Toggle Track
       - 1352778147 # Bitwarden
     state: latest
-  become: true

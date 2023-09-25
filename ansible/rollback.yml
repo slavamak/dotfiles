@@ -1,6 +1,5 @@
 - name: Perform a workstation rollback
   hosts: local
-  vars_files: vars/config.yml
   roles:
     - role: dotfiles
       vars:
