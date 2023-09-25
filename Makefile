@@ -1,10 +1,10 @@
 all:
 ifeq ($(shell uname), Linux)
 	@echo 'Install required packages'
-	apt update -yy
-	apt install software-properties-common -yy
-	add-apt-repository -yy --update ppa:ansible/ansible
-	apt install ansible zsh sudo -yy
+	sudo apt update -yy
+	sudo apt install software-properties-common -yy
+	sudo add-apt-repository -yy --update ppa:ansible/ansible
+	sudo apt install ansible zsh -yy
 endif
 ifeq ($(shell uname), Darwin)
 	@echo 'Install command-line tools'
