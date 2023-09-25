@@ -26,3 +26,6 @@
   loop: "{{ pnpm_packages }}"
   loop_control:
     loop_var: pnpm_package_name
+
+- name: Reshim node to update shims for all installed packages
+  ansible.builtin.command: asdf reshim nodejs

@@ -10,3 +10,6 @@
   loop: "{{ cargo_packages }}"
   loop_control:
     loop_var: cargo_package_name
+
+- name: Reshim rust to update shims for all installed packages
+  ansible.builtin.command: asdf reshim rust
