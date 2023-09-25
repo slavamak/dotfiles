@@ -1,0 +1,32 @@
+name: CI
+
+on: [push, pull_request]
+
+jobs:
+  build_ubuntu:
+    name: Build on Ubuntu
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout Code
+        uses: actions/checkout@v2
+
+      - name: Install make
+        run: sudo apt-get install make
+
+      - name: Run Makefile
+        run: make
+
+  build_macos:
+    name: Build on MacOS
+    runs-on: macos-latest
+
+    steps:
+      - name: Checkout Code
+        uses: actions/checkout@v2
+
+      - name: Install make
+        run: brew install make
+
+      - name: Run Makefile
+        run: make
