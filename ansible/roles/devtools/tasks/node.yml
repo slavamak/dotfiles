@@ -1,17 +1,28 @@
-- name: Install pnpm
+- name: Define npm packages
+  set_fact:
+    npm_packages:
+      - pnpm
+
+- name: Install npm packages
   community.general.npm:
-    name: pnpm
-    global: true
+    name: "{{ npm_package_name }}"
     state: latest
+    global: true
+  loop: "{{ npm_packages }}"
+  loop_control:
+    loop_var: npm_package_name
 
-- name: Install shopify cli
-  community.general.pnpm:
-    name: "@shopify/cli"
-    global: true
-    state: latest
+- name: Define pnpm packages
+  set_fact:
+    pnpm_packages:
+      - "@shopify/cli"
+      - "@shopify/theme"
 
-- name: Install shopify theme
+- name: Install pnpm packages
   community.general.pnpm:
-    name: "@shopify/theme"
-    global: true
+    name: "{{ pnpm_package_name }}"
     state: latest
+    global: true
+  loop: "{{ pnpm_packages }}"
+  loop_control:
+    loop_var: pnpm_package_name

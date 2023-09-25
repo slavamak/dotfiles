@@ -1,11 +1,11 @@
-- name: Gather installed neovim version
+- name: Retrieve the version of installed Neovim
   ansible.builtin.shell: nvim --version 2>&1 | head -1
   register: result
   changed_when: false
   ignore_errors: true
   check_mode: false
 
-- name: Set default version
+- name: Set default version if Neovim is not installed
   ansible.builtin.set_fact:
     result:
       stdout_lines: ["NVIM v0.0.0"]
@@ -16,7 +16,7 @@
     neovim_dir: "{{ ansible_env.HOME }}/.local/installers/neovim"
 
 - block:
-    - name: Clone neovim repository
+    - name: Clone Neovim repository
       ansible.builtin.git:
         repo: "https://github.com/neovim/neovim"
         dest: "{{ neovim_dir }}"
@@ -24,14 +24,14 @@
         force: true
         version: stable
 
-    - name: Build neovim from source
+    - name: Compile Neovim from source
       ansible.builtin.command: make CMAKE_BUILD_TYPE=Release
       args:
         chdir: "{{ neovim_dir }}"
         creates: "{{ neovim_dir }}/build/bin/nvim"
       become: true
 
-    - name: Install the built neovim
+    - name: Install the compiled Neovim
       ansible.builtin.command: make install
       args:
         chdir: "{{ neovim_dir }}"

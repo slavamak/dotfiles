@@ -2,7 +2,7 @@
   hosts: local
   vars_files: vars/config.yml
   environment:
-    PATH: "{{ ansible_env.HOME }}/.asdf/bin:{{ ansible_env.HOME }}/.asdf/shims:{{ ansible_env.PATH }}"
+    PATH: "{{ ansible_env.HOME }}/Library/pnpm:{{ ansible_env.HOME }}/.asdf/bin:{{ ansible_env.HOME }}/.asdf/shims:{{ ansible_env.PATH }}"
   roles:
     - packages
     - fonts

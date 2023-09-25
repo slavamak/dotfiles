@@ -1,4 +1,4 @@
-- name: Install apt packages
+- name: Install specified apt packages
   ansible.builtin.apt:
     name:
       - build-essential

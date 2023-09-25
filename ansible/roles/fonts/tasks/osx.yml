@@ -1,9 +1,9 @@
-- name: Tap a homebrew repository
+- name: Tap into the Homebrew 'cask-fonts' repository
   community.general.homebrew_tap:
     name: homebrew/cask-fonts
     state: present
 
-- name: Install homebrew casks
+- name: Install specific cask fonts and their nerd versions
   community.general.homebrew_cask:
     name:
       - "font-{{ item }}"

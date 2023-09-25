@@ -1,11 +1,10 @@
-- name: Install zsh
-  ansible.builtin.include_tasks: zsh.yml
-
-- name: Install asdf
-  ansible.builtin.include_tasks: asdf.yml
-
-- name: Install node
-  ansible.builtin.include_tasks: node.yml
-
-- name: Install neovim
-  ansible.builtin.include_tasks: neovim.yml
+- name: Configure developer tools
+  ansible.builtin.include_tasks: "{{ tool_name }}"
+  loop:
+    - zsh.yml
+    - asdf.yml
+    - node.yml
+    - rust.yml
+    - neovim.yml
+  loop_control:
+    loop_var: tool_name

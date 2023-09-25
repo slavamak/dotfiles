@@ -1,10 +1,10 @@
-- name: Tap a homebrew repository
+- name: Tap into the Homebrew 'cask-versions' repository
   community.general.homebrew_tap:
     name: homebrew/cask-versions
     state: present
   become: true
 
-- name: Install homebrew packages
+- name: Install specified Homebrew packages
   community.general.homebrew:
     name:
       - curl
@@ -30,7 +30,7 @@
     state: latest
   become: true
 
-- name: Install homebrew casks
+- name: Install specific applications using Homebrew casks
   community.general.homebrew_cask:
     name:
       - figma
@@ -47,7 +47,7 @@
     state: latest
   become: true
 
-- name: Install mac app store apps
+- name: Install specific applications from Mac App Store
   community.general.mas:
     id:
       - 1356178125 # Outline

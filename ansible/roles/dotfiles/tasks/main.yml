@@ -1,4 +1,4 @@
-- name: Add global ignore file
+- name: Create stow global ignore file
   ansible.builtin.copy:
     dest: "{{ ansible_env.HOME }}/.stow-global-ignore"
     content: \.DS_Store
