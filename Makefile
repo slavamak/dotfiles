@@ -1,10 +1,10 @@
 all:
 ifeq ($(shell uname), Linux)
 	@echo 'Install required packages'
-	sudo apt update -yy
-	sudo apt install software-properties-common -yy
-	sudo add-apt-repository -yy --update ppa:ansible/ansible
-	sudo apt install ansible git zsh -yy
+	apt update -yy
+	apt install software-properties-common -yy
+	add-apt-repository -yy --update ppa:ansible/ansible
+	apt install ansible zsh sudo -yy
 endif
 ifeq ($(shell uname), Darwin)
 	@echo 'Install command-line tools'
@@ -12,7 +12,7 @@ ifeq ($(shell uname), Darwin)
 	@echo 'Install required packages'
 	/bin/bash -c "$$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
 	brew analytics off
-	brew install ansible git zsh
+	brew install ansible zsh
 endif
 	ansible-galaxy collection install community.general
 	ANSIBLE_CONFIG="$(shell pwd)/ansible/ansible.cfg" \
