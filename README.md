@@ -1,3 +1,5 @@
+[![Setup](https://github.com/slavamak/dotfiles/actions/workflows/main.yml/badge.svg)](https://github.com/slavamak/dotfiles/actions/workflows/main.yml)
+
 # Configurations for MacOS/Ubuntu
 
 ## Requirements
@@ -5,8 +7,7 @@
 Make sure to these package is installed to your system:
 
 - `git`
-- `zsh`
-- `neovim`
+- `make`
 
 ## Contents
 
@@ -24,10 +25,10 @@ Includes configurations for:
 
 Run these commands in your terminal:
 
-```sh
-git clone git@github.com:slavamak/dotfiles.git ~/.dotfiles
+```bash
+git clone https://github.com/slavamak/dotfiles ~/.dotfiles
 cd ~/.dotfiles
-./install.sh
+make
 ```
 
 ## Neovim
@@ -66,5 +67,3 @@ Base configuration with [zap-zsh](https://github.com/zap-zsh/zap) plugin manager
 A few simple key mappings:
 
 - Swap `CAPSLOCK` with `LEFT CONTROL`
-- Map `CONTROL + [` to `ESCAPE`
-- Map `CONTROL + HJKL` to arrow keys (like vim)
