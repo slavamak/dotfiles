@@ -31,6 +31,9 @@ cd ~/.dotfiles
 make
 ```
 
+> [!WARNING]
+> For simple dotfiles management, I use stow with the `--adopt` option. Normally stow will abort the operation if a file already exists in the target directory, but with `--adopt` option stow will take the target file and replace it inside your `.dotfiles` directory. If that's not what you need, you can do `git restore .`, so git will undo the changes and return to the original files but the symlinks will stay there.
+
 ## Neovim
 
 Previously, I was using an pre-built configuration that had a lot of ui features and plugins. But I decided to drop it and make my own custom config without unnecessary plugins, only what I use most often. Config is based on [lazy.nvim](https://github.com/folke/lazy.nvim).
