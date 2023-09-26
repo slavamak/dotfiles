@@ -1,0 +1,10 @@
+- name: Configure developer tools
+  ansible.builtin.include_tasks: "{{ tool_name }}"
+  loop:
+    - zsh.yml
+    - asdf.yml
+    - node.yml
+    - rust.yml
+    - neovim.yml
+  loop_control:
+    loop_var: tool_name

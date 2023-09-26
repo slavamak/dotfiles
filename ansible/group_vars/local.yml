@@ -1,0 +1,10 @@
+---
+rollback: false
+path:
+  default: "{{ lookup('env', 'PATH') }}"
+  pnpm: "{{ lookup('env', 'HOME') }}/Library/pnpm"
+  asdf: "{{ lookup('env', 'HOME') }}/.asdf/bin"
+  asdf_shims: "{{ lookup('env', 'HOME') }}/.asdf/shims"
+default_env_vars:
+  PATH: "{{ path.pnpm }}:{{ path.asdf }}:{{ path.asdf_shims }}:{{ path.default }}"
+  DOTFILES: "{{ lookup('env', 'HOME') }}/.dotfiles"

@@ -1,0 +1,46 @@
+name: Environment Setup
+
+on:
+  pull_request:
+    types: [opened, synchronize]
+    branches:
+      - main
+  issue_comment:
+    types: [created]
+
+jobs:
+  build_ubuntu:
+    name: Setup on Ubuntu
+    runs-on: ubuntu-latest
+    if: (github.event_name == 'pull_request' && github.event.pull_request.base.ref == 'main') || (github.event_name == 'issue_comment' && github.event.issue.pull_request && contains(github.event.comment.body, '/run'))
+
+    steps:
+      - name: Checkout Code
+        uses: actions/checkout@v4
+
+      - name: Install make
+        run: sudo apt-get install make
+
+      - name: Create symlink
+        run: ln -s $GITHUB_WORKSPACE $HOME/.dotfiles
+
+      - name: Run Makefile
+        run: make
+
+  build_macos:
+    name: Setup on MacOS
+    runs-on: macos-latest
+    if: (github.event_name == 'pull_request' && github.event.pull_request.base.ref == 'main') || (github.event_name == 'issue_comment' && github.event.issue.pull_request && contains(github.event.comment.body, '/run'))
+
+    steps:
+      - name: Checkout Code
+        uses: actions/checkout@v4
+
+      - name: Install make
+        run: brew install make
+
+      - name: Create symlink
+        run: ln -s $GITHUB_WORKSPACE $HOME/.dotfiles
+
+      - name: Run Makefile
+        run: make

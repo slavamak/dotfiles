@@ -1,0 +1,10 @@
+- name: Set zsh as the default login shell
+  ansible.builtin.command: chsh -s /bin/zsh "{{ ansible_user_id }}"
+  become: true
+
+- name: Install the Zap zsh plugin manager
+  ansible.builtin.git:
+    repo: "https://github.com/zap-zsh/zap.git"
+    dest: "{{ ansible_env.HOME }}/.local/share/zap"
+    clone: yes
+    version: master

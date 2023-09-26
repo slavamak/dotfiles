@@ -23,6 +23,7 @@ export LC_ALL="en_US.UTF-8"
 
 export EDITOR="nvim"
 export GIT_EDITOR="$EDITOR"
+export VISUAL="$EDITOR"
 export DOTFILES="$HOME/.dotfiles"
 export PNPM_HOME="$HOME/Library/pnpm"
 

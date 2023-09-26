@@ -1,3 +1,5 @@
+[![Setup](https://github.com/slavamak/dotfiles/actions/workflows/main.yml/badge.svg)](https://github.com/slavamak/dotfiles/actions/workflows/main.yml)
+
 # Configurations for MacOS/Ubuntu
 
 ## Requirements
@@ -5,8 +7,7 @@
 Make sure to these package is installed to your system:
 
 - `git`
-- `zsh`
-- `neovim`
+- `make`
 
 ## Contents
 
@@ -24,11 +25,14 @@ Includes configurations for:
 
 Run these commands in your terminal:
 
-```sh
-git clone git@github.com:slavamak/dotfiles.git ~/.dotfiles
+```bash
+git clone https://github.com/slavamak/dotfiles ~/.dotfiles
 cd ~/.dotfiles
-./install.sh
+make
 ```
+
+> [!WARNING]
+> For simple dotfiles management, I use stow with the `--adopt` option. Normally stow will abort the operation if a file already exists in the target directory, but with `--adopt` option stow will take the target file and replace it inside your `.dotfiles` directory. If that's not what you need, you can do `git restore .`, so git will undo the changes and return to the original files but the symlinks will stay there.
 
 ## Neovim
 
@@ -66,5 +70,3 @@ Base configuration with [zap-zsh](https://github.com/zap-zsh/zap) plugin manager
 A few simple key mappings:
 
 - Swap `CAPSLOCK` with `LEFT CONTROL`
-- Map `CONTROL + [` to `ESCAPE`
-- Map `CONTROL + HJKL` to arrow keys (like vim)

@@ -1,0 +1,3 @@
+- name: Use stow to unlink dotfiles
+  ansible.builtin.command: stow --target {{ ansible_env.HOME }} --dir {{ ansible_env.DOTFILES }} --delete {{ item.path | basename }}
+  loop: "{{ config_dirs.files }}"

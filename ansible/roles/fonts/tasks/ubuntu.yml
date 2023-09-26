@@ -1,0 +1,40 @@
+- name: Ensure Nerd Fonts installation directory exists
+  ansible.builtin.file:
+    path: "{{ nerd_fonts.dest }}"
+    state: directory
+  check_mode: false
+
+- name: Find files of previously installed nerd fonts
+  ansible.builtin.find:
+    paths: "{{ nerd_fonts.dest }}"
+    patterns: "*{{ item | replace(' ', '') }}*"
+  loop: "{{ [font] | flatten }}"
+  register: found_files
+
+- ansible.builtin.set_fact:
+    not_installed_fonts: "{{ found_files.results | selectattr('matched', '==', 0) | map(attribute='item') }}"
+
+- block:
+    - name: Ensure the nerd fonts source directory does not exist
+      ansible.builtin.file:
+        path: "{{ nerd_fonts.src }}"
+        state: absent
+
+    - name: Clone the nerd fonts repository
+      ansible.builtin.command: git clone --filter=blob:none --sparse {{ nerd_fonts.url }} {{ nerd_fonts.src }}
+      args:
+        creates: "{{ nerd_fonts.src }}"
+
+    - name: Filter out the required font files for sparse checkout
+      ansible.builtin.command: git sparse-checkout add patched-fonts/{{ item | replace(" ", "") }}
+      loop: "{{ not_installed_fonts }}"
+      args:
+        chdir: "{{ nerd_fonts.src }}"
+
+    - name: Run the installation script
+      ansible.builtin.command: ./install.sh {{ item | replace(" ", "") }}
+      loop: "{{ not_installed_fonts }}"
+      args:
+        chdir: "{{ nerd_fonts.src }}"
+
+  when: not_installed_fonts | length > 0

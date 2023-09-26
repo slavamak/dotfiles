@@ -1,0 +1,27 @@
+- name: Clone asdf version manager
+  ansible.builtin.git:
+    repo: "https://github.com/asdf-vm/asdf.git"
+    dest: "{{ ansible_env.HOME }}/.asdf"
+    clone: yes
+    update: yes
+
+- name: Ensure asdf plugins for specific languages/tools are added
+  ansible.builtin.command: asdf plugin add {{ plugin_name }}
+  loop:
+    - ruby
+    - nodejs
+    - rust
+    - bun
+  loop_control:
+    loop_var: plugin_name
+  args:
+    creates: "{{ ansible_env.HOME }}/.asdf/plugins/{{ plugin_name }}"
+  become: true
+  become_user: "{{ ansible_user_id }}"
+
+- name: Install all tool versions based on the .tool-versions file
+  ansible.builtin.command: asdf install
+  args:
+    chdir: "{{ ansible_env.HOME }}"
+  become: true
+  become_user: "{{ ansible_user_id }}"

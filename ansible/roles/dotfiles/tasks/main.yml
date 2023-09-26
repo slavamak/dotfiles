@@ -1,0 +1,20 @@
+- name: Create stow global ignore file
+  ansible.builtin.copy:
+    dest: "{{ ansible_env.HOME }}/.stow-global-ignore"
+    content: \.DS_Store
+    mode: 0644
+  when: not rollback
+
+- name: Define directories
+  ansible.builtin.find:
+    paths: "{{ ansible_env.DOTFILES }}"
+    recurse: no
+    file_type: directory
+    excludes: ansible
+  register: config_dirs
+
+- ansible.builtin.include_tasks: install.yml
+  when: not rollback
+
+- ansible.builtin.include_tasks: uninstall.yml
+  when: rollback

@@ -1,0 +1,3 @@
+- name: Use stow to manage dotfiles
+  ansible.builtin.command: stow --target {{ ansible_env.HOME }} --dir {{ ansible_env.DOTFILES }} --stow {{ item.path | basename }} --adopt
+  loop: "{{ config_dirs.files }}"

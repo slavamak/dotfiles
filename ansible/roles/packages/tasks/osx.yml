@@ -1,0 +1,55 @@
+- name: Tap into the Homebrew "cask-versions" repository
+  community.general.homebrew_tap:
+    name: homebrew/cask-versions
+    state: present
+
+- name: Install specified Homebrew packages
+  community.general.homebrew:
+    name:
+      - curl
+      - exa
+      - fd
+      - fzf
+      - gawk
+      - gettext
+      - gpg
+      - gh
+      - git
+      - cmake
+      - htop
+      - lazygit
+      - ninja
+      - tree-sitter
+      - ripgrep
+      - tmux
+      - mas
+      - stow
+      - starship
+      - zsh
+    state: latest
+
+- name: Install specific applications using Homebrew casks
+  community.general.homebrew_cask:
+    name:
+      - figma
+      - google-chrome
+      - visual-studio-code
+      - iterm2-beta
+      - soundsource
+      - discord
+      - slack
+      - spotify
+      - transmission
+      - telegram
+      - karabiner-elements
+    state: latest
+  when: not ansible_env.GITHUB_ACTIONS | default("false") == "true"
+
+- name: Install specific applications from Mac App Store
+  community.general.mas:
+    id:
+      - 1356178125 # Outline
+      - 1291898086 # Toggle Track
+      - 1352778147 # Bitwarden
+    state: latest
+  when: not ansible_env.GITHUB_ACTIONS | default("false") == "true"

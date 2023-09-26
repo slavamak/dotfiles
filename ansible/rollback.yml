@@ -1,0 +1,6 @@
+- name: Perform a workstation rollback
+  hosts: local
+  roles:
+    - role: dotfiles
+      vars:
+        rollback: true

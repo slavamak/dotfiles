@@ -20,4 +20,22 @@ plug "zsh-users/zsh-completions"
 plug "zsh-users/zsh-syntax-highlighting"
 plug "MichaelAquilina/zsh-you-should-use"
 
-bindkey -s ^f "tms\n"
+bindkey -s "^F" "tms\n"
+
+bindkey "^R" history-incremental-search-backward
+bindkey -M isearch "^P" history-incremental-search-backward
+bindkey -M isearch "^N" history-incremental-search-forward
+bindkey "^P" history-search-backward
+bindkey "^N" history-search-forward
+bindkey "^ " autosuggest-execute
+
+bindkey "^[[A" history-beginning-search-backward
+bindkey "^[[B" history-beginning-search-forward
+
+autoload edit-command-line
+zle -N edit-command-line
+bindkey "^X" edit-command-line
+bindkey -M vicmd "^X" edit-command-line
+
+bindkey "^A" beginning-of-line
+bindkey "^E" end-of-line
