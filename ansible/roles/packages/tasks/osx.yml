@@ -43,6 +43,7 @@
       - telegram
       - karabiner-elements
     state: latest
+  when: not ansible_env.GITHUB_ACTIONS == "true"
 
 - name: Install specific applications from Mac App Store
   community.general.mas:
