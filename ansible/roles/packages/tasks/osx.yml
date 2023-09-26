@@ -51,3 +51,4 @@
       - 1291898086 # Toggle Track
       - 1352778147 # Bitwarden
     state: latest
+  when: not ansible_env.GITHUB_ACTIONS == "true"
