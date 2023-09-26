@@ -26,13 +26,13 @@
         creates: "{{ nerd_fonts.src }}"
 
     - name: Filter out the required font files for sparse checkout
-      ansible.builtin.command: git sparse-checkout add patched-fonts/{{ item | replace(' ', '') }}
+      ansible.builtin.command: git sparse-checkout add patched-fonts/{{ item | replace(" ", "") }}
       loop: "{{ not_installed_fonts }}"
       args:
         chdir: "{{ nerd_fonts.src }}"
 
     - name: Run the installation script
-      ansible.builtin.command: ./install.sh {{ item | replace(' ', '') }}
+      ansible.builtin.command: ./install.sh {{ item | replace(" ", "") }}
       loop: "{{ not_installed_fonts }}"
       args:
         chdir: "{{ nerd_fonts.src }}"

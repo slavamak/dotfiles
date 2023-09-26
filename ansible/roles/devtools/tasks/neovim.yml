@@ -38,4 +38,4 @@
         creates: /usr/local/bin/nvim
       become: true
 
-  when: neovim_version is version('0.9.2', '<')
+  when: neovim_version is version("0.9.2", "<")

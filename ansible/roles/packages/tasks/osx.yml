@@ -1,4 +1,4 @@
-- name: Tap into the Homebrew 'cask-versions' repository
+- name: Tap into the Homebrew "cask-versions" repository
   community.general.homebrew_tap:
     name: homebrew/cask-versions
     state: present
