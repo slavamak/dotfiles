@@ -43,7 +43,7 @@
       - telegram
       - karabiner-elements
     state: latest
-  when: not ansible_env.GITHUB_ACTIONS == "true"
+  when: not ansible_env.GITHUB_ACTIONS | default("false") == "true"
 
 - name: Install specific applications from Mac App Store
   community.general.mas:
@@ -52,4 +52,4 @@
       - 1291898086 # Toggle Track
       - 1352778147 # Bitwarden
     state: latest
-  when: not ansible_env.GITHUB_ACTIONS == "true"
+  when: not ansible_env.GITHUB_ACTIONS | default("false") == "true"
