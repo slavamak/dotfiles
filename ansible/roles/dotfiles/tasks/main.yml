@@ -2,11 +2,8 @@
   ansible.builtin.copy:
     dest: "{{ ansible_env.HOME }}/.stow-global-ignore"
     content: \.DS_Store
-    owner: "{{ ansible_user_id }}"
-    group: "{{ ansible_user_id }}"
     mode: 0644
   when: not rollback
-  become: true
 
 - name: Define directories
   ansible.builtin.find:
