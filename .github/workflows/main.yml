@@ -1,18 +1,17 @@
 name: Environment Setup
 
 on:
-  pull_request:
-    types: [opened, synchronize]
+  push:
     branches:
-      - main
-  issue_comment:
-    types: [created]
+      - dev
+  pull_request:
+    branches:
+      - dev
 
 jobs:
   build_ubuntu:
     name: Setup on Ubuntu
     runs-on: ubuntu-latest
-    if: (github.event_name == 'pull_request' && github.event.pull_request.base.ref == 'main') || (github.event_name == 'issue_comment' && github.event.issue.pull_request && contains(github.event.comment.body, '/run'))
 
     steps:
       - name: Checkout Code
@@ -30,7 +29,6 @@ jobs:
   build_macos:
     name: Setup on MacOS
     runs-on: macos-latest
-    if: (github.event_name == 'pull_request' && github.event.pull_request.base.ref == 'main') || (github.event_name == 'issue_comment' && github.event.issue.pull_request && contains(github.event.comment.body, '/run'))
 
     steps:
       - name: Checkout Code
