@@ -25,6 +25,7 @@ export EDITOR="nvim"
 export GIT_EDITOR="$EDITOR"
 export VISUAL="$EDITOR"
 export DOTFILES="$HOME/.dotfiles"
+export ZSH_COMPLETIONS="$HOME/.local/share/completions"
 export PNPM_HOME="$HOME/Library/pnpm"
 
 add_to_path "$PNPM_HOME"
