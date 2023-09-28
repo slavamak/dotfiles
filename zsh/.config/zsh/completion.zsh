@@ -1,3 +1,5 @@
+fpath+="$ZSH_COMPLETIONS"
+
 autoload -U +X bashcompinit && bashcompinit
 autoload -U +X compinit && compinit
 

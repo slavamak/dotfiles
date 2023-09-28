@@ -8,3 +8,23 @@
     dest: "{{ ansible_env.HOME }}/.local/share/zap"
     clone: yes
     version: master
+
+- name: Install zsh completions for tools
+  ansible.builtin.git:
+    repo: "https://github.com/lmburns/dotfiles.git"
+    dest: "{{ ansible_env.HOME }}/.local/installers/lmburns"
+    clone: yes
+
+- ansible.builtin.copy:
+    src: "{{ ansible_env.HOME }}/.local/installers/lmburns/.config/zsh/completions/"
+    dest: "{{ ansible_env.HOME }}/.local/share/completions/"
+
+- name: Install zsh completions for eza
+  ansible.builtin.git:
+    repo: "https://github.com/eza-community/eza.git"
+    dest: "{{ ansible_env.HOME }}/.local/installers/eza"
+    clone: yes
+
+- ansible.builtin.copy:
+    src: "{{ ansible_env.HOME }}/.local/installers/eza/completions/zsh/"
+    dest: "{{ ansible_env.HOME }}/.local/share/completions/"
