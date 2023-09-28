@@ -24,7 +24,6 @@
       - tmux
       - mas
       - stow
-      - starship
       - zsh
     state: latest
 
