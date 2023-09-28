@@ -2,6 +2,7 @@
   set_fact:
     cargo_packages:
       - starship
+      - eza
 
 - name: Install cargo packages
   community.general.cargo:

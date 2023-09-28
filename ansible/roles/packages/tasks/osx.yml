@@ -7,7 +7,6 @@
   community.general.homebrew:
     name:
       - curl
-      - exa
       - fd
       - fzf
       - gawk

@@ -6,7 +6,6 @@
       - curl
       - cmake
       - dirmngr
-      - exa
       - fd-find
       - fzf
       - gawk
