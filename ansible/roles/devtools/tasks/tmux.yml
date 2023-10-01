@@ -1,0 +1,8 @@
+- name: Install tmux plugin manager
+  ansible.builtin.git:
+    repo: "https://github.com/tmux-plugins/tpm.git"
+    dest: "{{ ansible_env.HOME }}/.tmux/plugins/tpm"
+    clone: yes
+
+- name: Install tmux plugins
+  ansible.builtin.command: "{{ ansible_env.HOME }}/.tmux/plugins/tpm/bin/install_plugins"
