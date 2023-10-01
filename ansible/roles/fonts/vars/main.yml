@@ -1,7 +1,7 @@
 ---
 nerd_fonts:
   url: https://github.com/ryanoasis/nerd-fonts.git
-  src: "{{ ansible_env.HOME }}/.local/installers/nerd-fonts"
+  src: "{{ ansible_env.INSTALLERS }}/nerd-fonts"
   dest: "{{ ansible_env.HOME }}/.local/share/fonts/NerdFonts"
 
 font:
