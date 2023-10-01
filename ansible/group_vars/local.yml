@@ -8,3 +8,4 @@ path:
 default_env_vars:
   PATH: "{{ path.pnpm }}:{{ path.asdf }}:{{ path.asdf_shims }}:{{ path.default }}"
   DOTFILES: "{{ lookup('env', 'HOME') }}/.dotfiles"
+  INSTALLERS: "{{ lookup('env', 'HOME') }}/.local/installers"

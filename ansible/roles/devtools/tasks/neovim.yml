@@ -13,7 +13,7 @@
 
 - ansible.builtin.set_fact:
     neovim_version: "{{ result.stdout_lines[0].split()[1].lstrip('v') }}"
-    neovim_src: "{{ ansible_env.HOME }}/.local/installers/neovim"
+    neovim_src: "{{ ansible_env.INSTALLERS }}/neovim"
     neovim_bin: /usr/local/bin/nvim
 
 - block:
