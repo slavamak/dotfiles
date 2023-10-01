@@ -17,8 +17,11 @@ return {
   },
 
   {
-    'xiyaowong/virtcolumn.nvim',
+    'lukas-reineke/virt-column.nvim',
     event = { 'BufReadPost', 'BufNewFile' },
+    opts = {
+      highlight = 'VirtColumn',
+    },
   },
 
   {
