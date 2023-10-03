@@ -96,7 +96,13 @@ return {
           },
         },
         ruby_ls = {},
-        stylelint_lsp = {},
+        stylelint_lsp = {
+          settings = {
+            stylelintplus = {
+              cssInJs = true,
+            },
+          },
+        },
         taplo = {},
         theme_check = {
           root_dir = function(fname)
@@ -248,11 +254,11 @@ return {
 
       conform.formatters.eslint_d = vim.tbl_deep_extend('force', eslint_d, {
         cwd = util.root_file(lsp_util.insert_package_json({
-          '.eslint.js',
-          '.eslint.cjs',
-          '.eslint.yaml',
-          '.eslint.yml',
-          '.eslint.json',
+          '.eslintrc.js',
+          '.eslintrc.cjs',
+          '.eslintrc.yaml',
+          '.eslintrc.yml',
+          '.eslintrc.json',
           'eslint.config.js',
           'eslint.config.ts',
         }, 'eslint')),
@@ -275,20 +281,23 @@ return {
         require_cwd = true,
       })
 
-      opts.formatters = {
+      local formatters = {
         prettierd_js = vim.tbl_deep_extend('force', prettierd, {
           condition = util.root_file {
-            'node_modules/.bin/eslint-plugin-prettier',
-            'node_modules/.bin/eslint-config-prettier',
+            'node_modules/eslint-plugin-prettier',
+            'node_modules/eslint-config-prettier',
           },
+        }),
+        prettierd_css = vim.tbl_deep_extend('force', prettierd, {
+          condition = util.root_file { 'node_modules/stylelint-prettier' },
         }),
       }
 
-      opts.formatters = {
-        prettierd_css = vim.tbl_deep_extend('force', prettierd, {
-          condition = util.root_file { 'node_modules/.bin/stylelint-prettier' },
-        }),
-      }
+      opts.formatters = opts.formatters or {}
+
+      for name, config in pairs(formatters) do
+        opts.formatters[name] = config
+      end
 
       conform.setup(opts)
     end,
