@@ -35,3 +35,15 @@ vim.opt.undodir = os.getenv 'HOME' .. '/.cache/nvim/undodir'
 
 vim.opt.spelllang = 'en_us'
 vim.opt.spell = true
+
+vim.filetype.add {
+  filename = {
+    hosts = 'ini',
+  },
+  pattern = {
+    ['.*/ansible/.*%.ya?ml'] = 'yaml.ansible',
+    ['.*/playbooks/.*%.ya?ml'] = 'yaml.ansible',
+    ['.*/roles/.*/tasks/.*%.ya?ml'] = 'yaml.ansible',
+    ['.*/roles/.*/handlers/.*%.ya?ml'] = 'yaml.ansible',
+  },
+}
