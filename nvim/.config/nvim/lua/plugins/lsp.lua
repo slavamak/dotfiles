@@ -97,10 +97,12 @@ return {
         },
         ruby_ls = {},
         stylelint_lsp = {
-          settings = {
-            stylelintplus = {
-              cssInJs = true,
-            },
+          filetypes = {
+            'css',
+            'postcss',
+            'sass',
+            'scss',
+            'vue',
           },
         },
         taplo = {},
