@@ -104,11 +104,13 @@ return {
         tailwindcss = {},
         taplo = {},
         theme_check = {
-          on_new_config = function(new_config)
+          root_dir = function(fname)
             local util = require 'lspconfig.util'
-            new_config.root_dir = util.root_pattern('.theme-check.yml', '.theme-check.yaml')
-              or util.find_package_json_ancestor
-              or util.find_git_ancestor
+
+            return util.root_pattern('.theme-check.yml', '.theme-check.yaml')(fname)
+              or util.find_package_json_ancestor(fname)
+              or util.find_node_modules_ancestor(fname)
+              or util.find_git_ancestor(fname)
           end,
         },
         tsserver = {},
