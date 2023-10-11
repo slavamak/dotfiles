@@ -158,7 +158,7 @@ return {
         bind('n', 'gD', '<Cmd>Telescope lsp_type_definitions<Cr>', 'LSP type definitions')
         bind('n', 'gI', '<Cmd>Telescope lsp_implementations<Cr>', 'LSP implementations')
         bind('n', 'gr', '<Cmd>Telescope lsp_references<Cr>', 'LSP references')
-        bind('n', '<Leader>d', '<Cmd>Telescope diagnostics<Cr>', 'LSP diagnostics')
+        bind('n', '<Leader>D', '<Cmd>Telescope diagnostics<Cr>', 'LSP diagnostics')
 
         bind({ 'n', 'v' }, '<Leader>f', function()
           require('conform').format { async = true, lsp_fallback = true }
