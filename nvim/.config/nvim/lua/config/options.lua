@@ -3,7 +3,8 @@ vim.g.border_chars = 'rounded'
 
 vim.g.netrw_browse_split = 0
 vim.g.netrw_banner = 0
-vim.g.netrw_winsize = 25
+vim.g.netrw_preview = 1
+vim.g.netrw_alto = 0
 
 vim.scriptencoding = 'utf-8'
 vim.opt.encoding = 'utf-8'
@@ -27,13 +28,21 @@ vim.opt.listchars = { space = '·', tab = '->' }
 vim.opt.showmatch = true
 vim.opt.cursorline = true
 vim.opt.hlsearch = true
+vim.opt.scrolloff = 8
+vim.opt.sidescrolloff = 8
+vim.opt.splitbelow = true
+vim.opt.splitright = true
+
+vim.opt.winbar = '%f'
+vim.opt.statusline = '%<%f %h%m%r%=%-14.(%l,%c%V%) %P'
+vim.opt.laststatus = 3
 
 vim.opt.swapfile = false
 vim.opt.backup = false
 vim.opt.undofile = true
 vim.opt.undodir = os.getenv 'HOME' .. '/.cache/nvim/undodir'
 
-vim.opt.spelllang = 'en_us'
+vim.opt.spelllang = 'ru_ru,en_us'
 vim.opt.spell = true
 
 vim.filetype.add {
