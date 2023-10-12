@@ -33,8 +33,8 @@ vim.opt.sidescrolloff = 8
 vim.opt.splitbelow = true
 vim.opt.splitright = true
 
-vim.opt.winbar = '%f %m'
-vim.opt.statusline = '%t %w%r%=%y %l:%c %P'
+vim.opt.winbar = '%f'
+vim.opt.statusline = '%t %m%w%r%=%y %l:%c %P'
 vim.opt.laststatus = 3
 
 vim.opt.swapfile = false
