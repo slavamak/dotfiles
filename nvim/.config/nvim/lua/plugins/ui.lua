@@ -16,6 +16,9 @@ return {
   {
     'nvim-lualine/lualine.nvim',
     event = { 'BufReadPost', 'BufNewFile', 'InsertEnter' },
+    dependencies = {
+      'nvim-tree/nvim-web-devicons',
+    },
     opts = {
       options = {
         component_separators = { left = '|', right = '|' },
@@ -24,7 +27,6 @@ return {
           'NvimTree',
           'TelescopePrompt',
         },
-        icons_enabled = false,
       },
       winbar = {
         lualine_a = { '%f' },
@@ -36,15 +38,38 @@ return {
         lualine_a = { 'mode' },
         lualine_b = {
           'branch',
-          'diff',
+          {
+            'diff',
+            colored = false,
+          },
           {
             'diagnostics',
+            sources = { 'nvim_diagnostic' },
+            sections = { 'error', 'warn' },
+            diagnostics_color = {
+              error = 'DiagnosticError',
+              warn = 'DiagnosticWarn',
+              info = 'DiagnosticInfo',
+              hint = 'DiagnosticHint',
+            },
+            symbols = {
+              error = ' ',
+              warn = ' ',
+              info = 'I',
+              hint = 'H',
+            },
             colored = false,
             update_in_insert = true,
+            always_visible = true,
           },
         },
         lualine_c = { 'filename' },
-        lualine_x = { 'filetype' },
+        lualine_x = {
+          {
+            'filetype',
+            icons_enabled = false,
+          },
+        },
         lualine_y = { 'progress' },
         lualine_z = { 'location' },
       },
