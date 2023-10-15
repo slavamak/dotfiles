@@ -43,6 +43,21 @@ return {
   },
 
   {
+    'nvim-tree/nvim-tree.lua',
+    cmd = { 'NvimTreeOpen', 'NvimTreeToggle', 'NvimTreeFindFileToggle' },
+    dependencies = {
+      'nvim-tree/nvim-web-devicons',
+    },
+    opts = {
+      actions = {
+        open_file = {
+          quit_on_open = true,
+        },
+      },
+    },
+  },
+
+  {
     'numToStr/Comment.nvim',
     event = { 'BufReadPre', 'BufNewFile' },
     config = true,
