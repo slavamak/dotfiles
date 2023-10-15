@@ -15,7 +15,7 @@ require('lazy').setup('plugins', {
   defaults = {
     lazy = true,
   },
-  install = { colorscheme = { 'github_light', 'github_dark' } },
+  install = { colorscheme = { 'github_light', 'tokyonight' } },
   ui = {
     border = vim.g.border_chars,
   },

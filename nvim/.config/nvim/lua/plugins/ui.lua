@@ -9,6 +9,11 @@ return {
   },
 
   {
+    'folke/tokyonight.nvim',
+    config = true,
+  },
+
+  {
     'nvim-lualine/lualine.nvim',
     event = { 'BufReadPost', 'BufNewFile', 'InsertEnter' },
     opts = {
