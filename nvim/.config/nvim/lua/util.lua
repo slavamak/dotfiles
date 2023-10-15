@@ -22,16 +22,4 @@ M.bind = function(opts)
   end
 end
 
-M.toggle_netrw = function()
-  if vim.g.netrw_is_open == 1 then
-    for i = 1, vim.fn.bufnr '$' do
-      if vim.fn.getbufvar(i, '&filetype') == 'netrw' then vim.cmd('bdelete ' .. i) end
-    end
-    vim.g.netrw_is_open = 0
-  else
-    vim.g.netrw_is_open = 1
-    vim.cmd 'Explore'
-  end
-end
-
 return M
