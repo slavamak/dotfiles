@@ -54,6 +54,13 @@ return {
           quit_on_open = true,
         },
       },
+      renderer = {
+        icons = {
+          show = {
+            folder = false,
+          },
+        },
+      },
     },
   },
 
