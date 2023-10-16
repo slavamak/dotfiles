@@ -1,0 +1,84 @@
+#!/usr/bin/env zsh
+
+get_tmux_option() {
+  local option_name="$1"
+  local default_value="$2"
+  local option_value=$(tmux show-option -gqv "$option_name")
+
+  if [ -z "$option_value" ]; then
+    echo "$default_value"
+  else
+    echo "$option_value"
+  fi
+}
+
+timestamp_to_date() {
+  local timestamp="$1"
+  local date_format_pattern="$2"
+
+  case "$OSTYPE" in
+    darwin*)
+      echo $(date -r "$timestamp" +"$date_format_pattern")
+      ;;
+    *)
+      echo $(date -d @"$timestamp" +"$date_format_pattern")
+      ;;
+  esac
+}
+
+state_transition() {
+  local time_duration="$1"
+
+  if [ $time_duration -gt 3599 ]; then
+    echo "more_than_hour"
+  elif [ $time_duration -gt 59 ]; then
+    echo "less_than_hour"
+  elif [ $time_duration -gt 0 ]; then
+    echo "just_now"
+  else
+    echo "off"
+  fi
+}
+
+state_message() {
+  local save_state="$1"
+  local last_save_timestamp="$2"
+  local time_duration="$3"
+
+  case "$save_state" in
+    "more_than_hour")
+      echo "saved at $(timestamp_to_date "$last_save_timestamp" "%Y-%m-%d %I:%M%p")"
+      ;;
+    "less_than_hour")
+      echo "saved $(bc <<< "$time_duration/60") minutes ago"
+      ;;
+    "just_now")
+      echo "saved just now"
+      ;;
+    "off")
+      echo "off"
+      ;;
+  esac
+}
+
+display_message() {
+  local status_wrap_string="\#{value}"
+  local last_save_timestamp="$(get_tmux_option @continuum-save-last-timestamp)"
+  local current_timestamp="$(date +%s)"
+  local time_duration="$(bc <<< "$current_timestamp - $last_save_timestamp")"
+  local save_state=$(state_transition "$time_duration")
+  local state_message=$(state_message "$save_state" "$last_save_timestamp" "$time_duration")
+  local message_display_style="$(get_tmux_option @continuum-status-off-wrap-style "")"
+
+  if [ "$save_state" != "off" ]; then
+    message_display_style="$(get_tmux_option @continuum-status-on-wrap-style "")"
+  fi
+
+  if [[ $message_display_style == *"$status_wrap_string"* ]]; then
+    state_message="${message_display_style/$status_wrap_string/$state_message}"
+  fi
+
+  echo "$state_message"
+}
+
+display_message
