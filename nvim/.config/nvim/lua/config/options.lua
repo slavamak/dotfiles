@@ -31,7 +31,7 @@ vim.opt.sidescrolloff = 8
 vim.opt.splitbelow = true
 vim.opt.splitright = true
 
-vim.opt.showmode = false
+vim.opt.showmode = true
 vim.opt.laststatus = 0
 
 vim.opt.swapfile = false

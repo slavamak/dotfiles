@@ -26,3 +26,11 @@ vim.api.nvim_create_autocmd('FileType', {
   group = augroup 'lsp_border',
   pattern = { 'lspinfo', 'lsp-installer' },
 })
+
+vim.api.nvim_create_autocmd('ColorScheme', {
+  callback = function()
+    require('modules.lualine').setup()
+  end,
+  group = augroup 'lualine_update_theme_colors',
+  pattern = '*',
+})
