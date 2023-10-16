@@ -4076,9 +4076,9 @@
 	<key>TabsHaveCloseButton</key>
 	<true/>
 	<key>TerminalMargin</key>
-	<integer>4</integer>
+	<integer>10</integer>
 	<key>TerminalVMargin</key>
-	<integer>2</integer>
+	<integer>6</integer>
 	<key>UseBorder</key>
 	<false/>
 	<key>VisualIndicatorForEsc</key>
