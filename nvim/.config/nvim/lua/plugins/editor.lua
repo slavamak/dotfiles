@@ -61,6 +61,10 @@ return {
           },
         },
       },
+      view = {
+        centralize_selection = true,
+        signcolumn = 'no',
+      },
     },
   },
 
