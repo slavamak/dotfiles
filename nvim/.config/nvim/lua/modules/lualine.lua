@@ -5,17 +5,19 @@ function M.get_theme()
   if not next(hl) then return 'auto' end
 
   local utils = require 'lualine.utils.utils'
+  local normal = utils.extract_highlight_colors 'Lualine'
+  local inactive = utils.extract_highlight_colors 'LualineNC'
 
   return {
     normal = {
-      a = utils.extract_highlight_colors 'Lualine',
-      b = utils.extract_highlight_colors 'Lualine',
-      c = utils.extract_highlight_colors 'Lualine',
+      a = normal,
+      b = normal,
+      c = normal,
     },
     inactive = {
-      a = utils.extract_highlight_colors 'LualineNC',
-      b = utils.extract_highlight_colors 'LualineNC',
-      c = utils.extract_highlight_colors 'LualineNC',
+      a = inactive,
+      b = inactive,
+      c = inactive,
     },
   }
 end
