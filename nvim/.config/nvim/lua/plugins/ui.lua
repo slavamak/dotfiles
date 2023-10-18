@@ -20,6 +20,8 @@ return {
   {
     'folke/tokyonight.nvim',
     opts = {
+      style = 'night',
+      light_style = 'day',
       on_highlights = function(hl, c)
         hl.Lualine = {
           bg = c.bg,
@@ -45,21 +47,20 @@ return {
         section_separators = { left = '', right = '' },
         disabled_filetypes = {
           'NvimTree',
-          'TelescopePrompt',
         },
       },
       winbar = {
-        lualine_a = { { '%f', padding = 0 } },
+        lualine_a = { '%f' },
       },
       inactive_winbar = {
-        lualine_a = { { '%f', padding = 0 } },
+        lualine_a = { '%f' },
       },
       sections = {
         lualine_a = {
           {
             '',
             type = 'stl',
-            padding = { left = 0, right = 2 },
+            padding = { left = 1, right = 2 },
             on_click = function()
               vim.cmd 'edit $DOTFILES/nvim/.config/nvim/lua/config/options.lua'
             end,
@@ -91,21 +92,43 @@ return {
         },
         lualine_c = { 'filename' },
         lualine_x = { { 'filetype', icons_enabled = false } },
-        lualine_y = { { 'progress', padding = { left = 1, right = 0 } } },
-        lualine_z = { { 'location', padding = { left = 1, right = 0 } } },
-      },
-      inactive_sections = {
-        lualine_a = {},
-        lualine_b = {},
-        lualine_c = { { 'filename', padding = 0 } },
-        lualine_x = { { 'location', padding = 0 } },
-        lualine_y = {},
-        lualine_z = {},
+        lualine_y = { { 'progress' } },
+        lualine_z = { { 'location' } },
       },
     },
     config = function(_, opts)
       require('modules.lualine').setup(opts)
     end,
+  },
+
+  {
+    'f-person/auto-dark-mode.nvim',
+    event = 'VeryLazy',
+    opts = {
+      update_interval = 500,
+      set_dark_mode = function()
+        vim.cmd 'colorscheme tokyonight'
+        vim.api.nvim_set_option('background', 'dark')
+      end,
+      set_light_mode = function()
+        vim.cmd 'colorscheme github_light'
+        vim.api.nvim_set_option('background', 'light')
+      end,
+    },
+  },
+
+  {
+    'jovanlanik/fsplash.nvim',
+    opts = {
+      autocmds = {
+        'ModeChanged',
+        'CursorMoved',
+        'TextChanged',
+        -- 'VimResized',
+        -- 'WinScrolled',
+      },
+      border = 'none',
+    },
   },
 
   {

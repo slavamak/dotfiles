@@ -31,6 +31,7 @@ vim.opt.sidescrolloff = 8
 vim.opt.splitbelow = true
 vim.opt.splitright = true
 
+vim.opt.shortmess:append 'I'
 vim.opt.showmode = true
 vim.opt.laststatus = 0
 
