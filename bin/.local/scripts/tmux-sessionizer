@@ -1,10 +1,15 @@
 #!/usr/bin/env zsh
 
+# Set default value for TMUX_DIRS if it's not set or is empty
+if [[ -z ${TMUX_DIRS[*]} ]]; then
+  TMUX_DIRS=(~)
+fi
+
 # If a directory is supplied as an argument, use it. Otherwise, select a directory via fzf
 if [[ $# -eq 1 ]]; then
   selected_dir=$1
 else
-  selected_dir=$(find ~/Development ~ -mindepth 1 -maxdepth 1 -type d | fzf)
+  selected_dir=$(find $TMUX_DIRS -mindepth 1 -maxdepth 1 -type d | sort | fzf)
 fi
 
 # Exit if no directory was selected

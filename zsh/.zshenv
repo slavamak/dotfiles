@@ -15,6 +15,13 @@ export FZF_DEFAULT_OPTS="
   --color=marker:-1,spinner:-1,header:-1
 "
 
+export TMUX_DIRS=(
+  ~
+  ~/Development
+  ~/Development/clients
+  ~/Development/personal
+)
+
 export HISTFILE="$HOME/.zsh_history"
 export HISTSIZE=1000000
 export SAVEHIST=1000000
