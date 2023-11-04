@@ -150,8 +150,8 @@ return {
       lsp_zero.on_attach(function(client, bufnr)
         local bind = require('util').bind { buffer = bufnr }
 
-        bind('n', 'K', vim.lsp.buf.hover, '')
-        bind('n', '<Leader>r', vim.lsp.buf.rename, 'Rename symbol')
+        bind('n', 'K', vim.lsp.buf.hover, 'Displays hover information about the symbol')
+        bind('n', '<Leader>r', vim.lsp.buf.rename, 'Renames all references to the symbol')
         bind('n', '<Leader>ca', vim.lsp.buf.code_action, 'Code action')
         bind('n', 'gs', vim.lsp.buf.signature_help, 'LSP signature help')
         bind('n', 'gd', '<Cmd>Telescope lsp_definitions<Cr>', 'LSP definitions')
