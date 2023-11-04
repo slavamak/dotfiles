@@ -46,7 +46,29 @@ return {
         component_separators = { left = '', right = '' },
         section_separators = { left = '', right = '' },
         disabled_filetypes = {
+          winbar = {
+            'NvimTree',
+          },
+        },
+        ignore_focus = {
           'NvimTree',
+        },
+        globalstatus = true,
+      },
+      tabline = {
+        lualine_a = { { 'tabs', mode = 1 } },
+        lualine_b = {},
+        lualine_c = {},
+        lualine_x = {},
+        lualine_y = {},
+        lualine_z = {
+          {
+            '',
+            type = 'stl',
+            on_click = function()
+              vim.cmd 'tabclose'
+            end,
+          },
         },
       },
       winbar = {
@@ -67,8 +89,21 @@ return {
           },
         },
         lualine_b = {
-          'branch',
-          { 'diff', colored = false },
+          'b:gitsigns_head',
+          {
+            'diff',
+            colored = false,
+            source = function()
+              local gitsigns = vim.b.gitsigns_status_dict
+              if gitsigns then
+                return {
+                  added = gitsigns.added,
+                  modified = gitsigns.changed,
+                  removed = gitsigns.removed,
+                }
+              end
+            end,
+          },
           {
             'diagnostics',
             sources = { 'nvim_diagnostic' },

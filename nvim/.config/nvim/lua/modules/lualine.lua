@@ -31,6 +31,10 @@ function M.setup(opts)
   end
 
   require('lualine').setup(M.opts)
+
+  vim.defer_fn(function()
+    vim.o.showtabline = 1
+  end, 0)
 end
 
 return M
