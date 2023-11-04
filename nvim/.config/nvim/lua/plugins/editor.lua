@@ -64,6 +64,10 @@ return {
       view = {
         centralize_selection = true,
         signcolumn = 'no',
+        width = {
+          min = 30,
+          max = 40,
+        },
       },
     },
   },
