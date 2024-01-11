@@ -1,6 +1,11 @@
 vim.g.mapleader = ' '
 vim.g.border_chars = 'rounded'
 
+vim.g.netrw_browse_split = 0
+vim.g.netrw_banner = 0
+vim.g.netrw_preview = 1
+vim.g.netrw_alto = 0
+
 vim.scriptencoding = 'utf-8'
 vim.opt.encoding = 'utf-8'
 vim.opt.fileencoding = 'utf-8'
@@ -20,7 +25,7 @@ vim.opt.ignorecase = true
 vim.opt.hlsearch = true
 vim.opt.showmatch = true
 vim.opt.list = true
-vim.opt.listchars = { space = '·', tab = '->' }
+vim.opt.listchars = { space = '·', tab = '▸ ' }
 vim.opt.cursorline = true
 
 vim.opt.scrolloff = 8
@@ -28,7 +33,6 @@ vim.opt.sidescrolloff = 8
 vim.opt.splitbelow = true
 vim.opt.splitright = true
 
-vim.opt.shortmess:append 'I'
 vim.opt.showmode = true
 vim.opt.laststatus = 0
 

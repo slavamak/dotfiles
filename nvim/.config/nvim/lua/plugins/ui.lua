@@ -1,38 +1,26 @@
 return {
   {
-    'projekt0n/github-nvim-theme',
+    'rose-pine/neovim',
+    name = 'rose-pine',
     lazy = false,
     priority = 1000,
     opts = {
-      groups = {
-        all = {
-          Lualine = { fg = 'fg0', bg = 'bg1' },
-          LualineNC = { fg = 'palette.fg.muted', bg = 'bg1' },
-        },
+      styles = {
+        bold = false,
+        italic = false,
+        transparency = false,
+      },
+      highlight_groups = {
+        Lualine = { fg = 'muted', bg = 'base' },
+        LualineNC = { fg = 'highlight_med', bg = 'base' },
+        NonText = { fg = 'highlight_med' },
+        VirtColumn = { fg = 'highlight_low' },
       },
     },
     config = function(_, opts)
-      require('github-theme').setup(opts)
-      vim.cmd 'colorscheme github_light'
+      require('rose-pine').setup(opts)
+      vim.cmd 'colorscheme rose-pine'
     end,
-  },
-
-  {
-    'folke/tokyonight.nvim',
-    opts = {
-      style = 'night',
-      light_style = 'day',
-      on_highlights = function(hl, c)
-        hl.Lualine = {
-          bg = c.bg,
-          fg = c.dark5,
-        }
-        hl.LualineNC = {
-          bg = c.bg,
-          fg = c.fg_gutter,
-        }
-      end,
-    },
   },
 
   {
@@ -45,18 +33,30 @@ return {
       options = {
         component_separators = { left = '', right = '' },
         section_separators = { left = '', right = '' },
-        disabled_filetypes = {
-          winbar = {
-            'NvimTree',
-          },
-        },
-        ignore_focus = {
-          'NvimTree',
-        },
         globalstatus = true,
       },
       tabline = {
-        lualine_a = { { 'tabs', mode = 1 } },
+        lualine_a = {
+          {
+            'tabs',
+            mode = 1,
+            fmt = function(name, context)
+              local buflist = vim.fn.tabpagebuflist(context.tabnr)
+              local winnr = vim.fn.tabpagewinnr(context.tabnr)
+              local bufnr = buflist[winnr]
+              local filetype = vim.bo[bufnr].filetype
+              local tab_name = name
+
+              if filetype == 'netrw' then
+                tab_name = 'File Tree'
+              elseif filetype == 'TelescopePrompt' then
+                tab_name = 'Telescope'
+              end
+
+              return tab_name
+            end,
+          },
+        },
         lualine_b = {},
         lualine_c = {},
         lualine_x = {},
@@ -139,31 +139,7 @@ return {
   {
     'f-person/auto-dark-mode.nvim',
     event = 'VeryLazy',
-    opts = {
-      update_interval = 500,
-      set_dark_mode = function()
-        vim.cmd 'colorscheme tokyonight'
-        vim.api.nvim_set_option('background', 'dark')
-      end,
-      set_light_mode = function()
-        vim.cmd 'colorscheme github_light'
-        vim.api.nvim_set_option('background', 'light')
-      end,
-    },
-  },
-
-  {
-    'jovanlanik/fsplash.nvim',
-    opts = {
-      autocmds = {
-        'ModeChanged',
-        'CursorMoved',
-        'TextChanged',
-        -- 'VimResized',
-        -- 'WinScrolled',
-      },
-      border = 'none',
-    },
+    config = true,
   },
 
   {
@@ -177,8 +153,15 @@ return {
   {
     'lukas-reineke/indent-blankline.nvim',
     event = { 'BufReadPost', 'BufNewFile' },
+    main = 'ibl',
     opts = {
-      show_current_context = true,
+      indent = {
+        char = '│',
+        highlight = 'VirtColumn',
+      },
+      scope = {
+        show_start = false,
+      },
     },
   },
 }

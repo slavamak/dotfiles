@@ -1,6 +1,6 @@
 local bind = require('util').bind()
 
-bind('n', '<Leader>pv', '<Cmd>NvimTreeFindFileToggle<Cr>', 'Project view')
+bind('n', '<Leader>pv', '<Cmd>lua require("util").toggle_netrw()<Cr>', 'Project view')
 bind('i', 'jk', '<Esc>', 'Escape')
 bind('n', '<Leader>Q', '<Cmd>qa!<Cr>', 'Exit neovim')
 

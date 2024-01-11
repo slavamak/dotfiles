@@ -43,36 +43,6 @@ return {
   },
 
   {
-    'nvim-tree/nvim-tree.lua',
-    cmd = { 'NvimTreeOpen', 'NvimTreeToggle', 'NvimTreeFindFileToggle' },
-    dependencies = {
-      'nvim-tree/nvim-web-devicons',
-    },
-    opts = {
-      actions = {
-        open_file = {
-          quit_on_open = true,
-        },
-      },
-      renderer = {
-        icons = {
-          show = {
-            folder = false,
-          },
-        },
-      },
-      view = {
-        centralize_selection = true,
-        signcolumn = 'no',
-        width = {
-          min = 30,
-          max = 40,
-        },
-      },
-    },
-  },
-
-  {
     'numToStr/Comment.nvim',
     event = { 'BufReadPre', 'BufNewFile' },
     config = true,
