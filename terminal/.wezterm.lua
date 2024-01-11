@@ -3,9 +3,9 @@ local wezterm = require 'wezterm'
 
 if wezterm.config_builder then config = wezterm.config_builder() end
 
-function scheme_for_appearance(appearance)
-  if appearance:find 'Dark' then return 'Tokyo Night' end
-  return 'Github'
+local function scheme_for_appearance(appearance)
+  if appearance:find 'Dark' then return 'rose-pine' end
+  return 'rose-pine-dawn'
 end
 
 config.animation_fps = 60
