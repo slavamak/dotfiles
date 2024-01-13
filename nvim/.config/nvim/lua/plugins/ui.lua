@@ -34,6 +34,7 @@ return {
         component_separators = { left = '', right = '' },
         section_separators = { left = '', right = '' },
         globalstatus = true,
+        disabled_filetypes = { 'alpha' },
       },
       tabline = {
         lualine_a = {
@@ -137,8 +138,29 @@ return {
   },
 
   {
+    'goolord/alpha-nvim',
+    lazy = false,
+    dependencies = {
+      'nvim-tree/nvim-web-devicons',
+    },
+    config = function()
+      local alpha = require 'alpha'
+      local startify = require 'alpha.themes.startify'
+
+      startify.section.header.val = {
+        ' _  ___   _____ __  __ ',
+        '| \\| \\ \\ / /_ _|  \\/  |',
+        '| .` |\\ V / | || |\\/| |',
+        '|_|\\_| \\_/ |___|_|  |_|',
+      }
+
+      alpha.setup(startify.config)
+    end,
+  },
+
+  {
     'f-person/auto-dark-mode.nvim',
-    event = 'VeryLazy',
+    lazy = false,
     config = true,
   },
 
