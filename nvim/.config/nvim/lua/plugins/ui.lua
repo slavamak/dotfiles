@@ -85,7 +85,7 @@ return {
             type = 'stl',
             padding = { left = 1, right = 2 },
             on_click = function()
-              vim.cmd 'edit $DOTFILES/nvim/.config/nvim/lua/config/options.lua'
+              vim.cmd 'Alpha'
             end,
           },
         },
