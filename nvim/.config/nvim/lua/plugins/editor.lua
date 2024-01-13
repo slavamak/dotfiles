@@ -59,4 +59,33 @@ return {
     event = 'InsertEnter',
     config = true,
   },
+
+  {
+    'nvim-neo-tree/neo-tree.nvim',
+    branch = 'v3.x',
+    cmd = 'Neotree',
+    dependencies = {
+      'nvim-lua/plenary.nvim',
+      'nvim-tree/nvim-web-devicons',
+      'MunifTanjim/nui.nvim',
+    },
+    opts = {
+      close_if_last_window = true,
+      popup_border_style = vim.g.border_chars,
+      filesystem = {
+        filtered_items = {
+          hide_dotfiles = false,
+          hide_gitignored = false,
+        },
+      },
+      event_handlers = {
+        {
+          event = 'file_opened',
+          handler = function()
+            vim.cmd 'Neotree close'
+          end,
+        },
+      },
+    },
+  },
 }
