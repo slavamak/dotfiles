@@ -8,7 +8,6 @@
     name:
       - curl
       - fd
-      - fzf
       - gawk
       - gettext
       - gpg

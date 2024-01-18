@@ -3,3 +3,14 @@
 
 - ansible.builtin.include_tasks: ubuntu.yml
   when: ansible_os_family == "Debian"
+
+- name: Clone fzf repository
+  ansible.builtin.git:
+    repo: "https://github.com/junegunn/fzf.git"
+    dest: "{{ ansible_env.HOME }}/.fzf"
+    depth: 1
+    clone: true
+    update: true
+
+- name: Run the fzf installation script
+  ansible.builtin.command: "{{ ansible_env.HOME }}/.fzf/install --all --key-bindings --completion --no-bash --no-fish --no-update-rc"

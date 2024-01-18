@@ -2,6 +2,7 @@ source "$HOME/.local/share/zap/zap.zsh"
 source "$HOME/.config/zsh/completion.zsh"
 source "$HOME/.asdf/asdf.sh"
 source "$HOME/.asdf/completions/asdf.bash"
+source "$HOME/.fzf.zsh"
 
 eval "$(starship init zsh)"
 
@@ -22,7 +23,7 @@ plug "MichaelAquilina/zsh-you-should-use"
 
 bindkey -s "^F" "tms\n"
 
-bindkey "^R" history-incremental-search-backward
+# bindkey "^R" history-incremental-search-backward
 bindkey -M isearch "^P" history-incremental-search-backward
 bindkey -M isearch "^N" history-incremental-search-forward
 bindkey "^P" history-search-backward

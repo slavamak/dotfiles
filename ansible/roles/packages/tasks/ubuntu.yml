@@ -7,7 +7,6 @@
       - cmake
       - dirmngr
       - fd-find
-      - fzf
       - gawk
       - gettext
       - gpg
