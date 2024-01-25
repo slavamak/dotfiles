@@ -35,8 +35,8 @@ bindkey "^Y" autosuggest-execute
 bindkey "^\\" autosuggest-accept
 bindkey "^ " autosuggest-clear
 
-bindkey "^[B" backward-word
-bindkey "^[F" forward-word
+bindkey "^[b" backward-word
+bindkey "^[f" forward-word
 
 autoload edit-command-line
 zle -N edit-command-line
