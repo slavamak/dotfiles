@@ -28,12 +28,15 @@ bindkey -M isearch "^P" history-incremental-search-backward
 bindkey -M isearch "^N" history-incremental-search-forward
 bindkey "^P" history-search-backward
 bindkey "^N" history-search-forward
+bindkey "^[[A" history-beginning-search-backward
+bindkey "^[[B" history-beginning-search-forward
+
 bindkey "^Y" autosuggest-execute
 bindkey "^\\" autosuggest-accept
 bindkey "^ " autosuggest-clear
 
-bindkey "^[[A" history-beginning-search-backward
-bindkey "^[[B" history-beginning-search-forward
+bindkey "^[B" backward-word
+bindkey "^[F" forward-word
 
 autoload edit-command-line
 zle -N edit-command-line
