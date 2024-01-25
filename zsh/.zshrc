@@ -21,7 +21,7 @@ plug "zsh-users/zsh-completions"
 plug "zsh-users/zsh-syntax-highlighting"
 plug "MichaelAquilina/zsh-you-should-use"
 
-bindkey -s "^F" "tms\n"
+bindkey -s "^F" "^Utms\n"
 
 # bindkey "^R" history-incremental-search-backward
 bindkey -M isearch "^P" history-incremental-search-backward
