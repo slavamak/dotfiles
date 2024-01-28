@@ -91,6 +91,17 @@ return {
             },
           },
         },
+        pylsp = {
+          settings = {
+            pylsp = {
+              plugins = {
+                pycodestyle = {
+                  indentSize = 2,
+                },
+              },
+            },
+          },
+        },
         ruby_ls = {},
         stylelint_lsp = {
           filetypes = {
