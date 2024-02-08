@@ -14,5 +14,12 @@
 [user]
   name = Slava Maksimov
   email = hello@slavamak.com
+  signingkey = ~/.ssh/id_rsa.pub
 [init]
   defaultBranch = main
+[gpg]
+  format = ssh
+[commit]
+  gpgsign = true
+[tag]
+  gpgsign = true
