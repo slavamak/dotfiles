@@ -21,27 +21,26 @@ plug "zsh-users/zsh-completions"
 plug "zsh-users/zsh-syntax-highlighting"
 plug "MichaelAquilina/zsh-you-should-use"
 
-bindkey -s "^F" "^Utms\n"
+bindkey "^A" beginning-of-line
+bindkey "^E" end-of-line
+bindkey "^F" forward-char
+bindkey "^B" backward-char
+bindkey "^[B" backward-word
+bindkey "^[F" forward-word
 
-# bindkey "^R" history-incremental-search-backward
-bindkey -M isearch "^P" history-incremental-search-backward
-bindkey -M isearch "^N" history-incremental-search-forward
+bindkey "^K" kill-line
+bindkey "^D" delete-char
+
 bindkey "^P" history-search-backward
 bindkey "^N" history-search-forward
-bindkey "^[[A" history-beginning-search-backward
-bindkey "^[[B" history-beginning-search-forward
+bindkey "^[[A" up-line-or-history
+bindkey "^[[B" down-line-or-history
 
+bindkey -s "^O" "^Utms\n"
 bindkey "^Y" autosuggest-execute
-bindkey "^\\" autosuggest-accept
-bindkey "^ " autosuggest-clear
-
-bindkey "^[b" backward-word
-bindkey "^[f" forward-word
+bindkey "^_" undo
 
 autoload edit-command-line
 zle -N edit-command-line
 bindkey "^X" edit-command-line
 bindkey -M vicmd "^X" edit-command-line
-
-bindkey "^A" beginning-of-line
-bindkey "^E" end-of-line
