@@ -148,6 +148,10 @@ return {
       local lsp_zero = require 'lsp-zero'
       lsp_zero.extend_lspconfig()
 
+      lsp_zero.set_server_config {
+        autostart = false,
+      }
+
       lsp_zero.on_attach(function(client, bufnr)
         local bind = require('util').bind { buffer = bufnr }
 

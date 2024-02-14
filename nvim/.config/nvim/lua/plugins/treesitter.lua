@@ -36,6 +36,9 @@ return {
       },
       highlight = {
         enable = true,
+        disable = function(_, buf)
+          return require('util').is_large_or_minified(buf)
+        end,
       },
       incremental_selection = {
         enable = true,

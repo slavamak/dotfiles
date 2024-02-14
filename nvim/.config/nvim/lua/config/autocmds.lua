@@ -34,3 +34,17 @@ vim.api.nvim_create_autocmd('ColorScheme', {
   group = augroup 'lualine_update_theme_colors',
   pattern = '*',
 })
+
+vim.api.nvim_create_autocmd('FileType', {
+  callback = function(args)
+    local is_large_or_minified = require('util').is_large_or_minified(args.buf)
+    if not is_large_or_minified then
+      local matching_configs = require('lspconfig.util').get_config_by_ft(args.match)
+      for _, config in ipairs(matching_configs) do
+        config.launch(args.buf)
+      end
+    end
+  end,
+  group = augroup 'lsp_manually_start_server',
+  pattern = '*',
+})

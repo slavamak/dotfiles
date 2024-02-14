@@ -34,4 +34,17 @@ M.toggle_netrw = function()
   end
 end
 
+-- Returns true for files larger than 100KB or for minified files.
+M.is_large_or_minified = function(buf)
+  local max_filesize = 100 * 1024
+  local line_count = vim.api.nvim_buf_line_count(buf)
+  local ok, stats = pcall(vim.loop.fs_stat, vim.api.nvim_buf_get_name(buf))
+
+  if ok and stats then
+    if stats.size > max_filesize or (stats.size > 1024 and line_count == 1) then return true end
+  end
+
+  return false
+end
+
 return M
