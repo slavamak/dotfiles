@@ -22,6 +22,12 @@ return {
     config = function()
       local telescope = require 'telescope'
       local actions = require 'telescope.actions'
+      local telescope_config = require 'telescope.config'
+      local vimgrep_arguments = { unpack(telescope_config.values.vimgrep_arguments) }
+
+      table.insert(vimgrep_arguments, '--hidden')
+      table.insert(vimgrep_arguments, '--glob')
+      table.insert(vimgrep_arguments, '!**/.git/*')
 
       telescope.setup {
         defaults = {
@@ -34,6 +40,12 @@ return {
               ['<Left>'] = actions.preview_scrolling_left,
               ['<Right>'] = actions.preview_scrolling_right,
             },
+          },
+          vimgrep_arguments = vimgrep_arguments,
+        },
+        pickers = {
+          find_files = {
+            find_command = { 'rg', '--files', '--hidden', '--glob', '!**/.git/*' },
           },
         },
       }
