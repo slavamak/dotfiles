@@ -258,70 +258,58 @@ return {
         bash = { 'shfmt' },
         zsh = { 'shfmt' },
       },
-      formatters = {},
+      formatters = {
+        shfmt = {
+          prepend_args = { '-i', '2', '-s', '-ci', '-sr', '-ln', 'bash' },
+        },
+      },
       log_level = vim.log.levels.DEBUG,
     },
     config = function(_, opts)
       local conform = require 'conform'
       local conform_util = require 'conform.util'
       local lsp_util = require 'lspconfig.util'
-      local eslint_d = require 'conform.formatters.eslint_d'
       local prettierd = require 'conform.formatters.prettierd'
-      local stylelint = require 'conform.formatters.stylelint'
-      local shfmt = require 'conform.formatters.shfmt'
 
-      local formatters = {
-        eslint_d = vim.tbl_deep_extend('force', eslint_d, {
-          cwd = conform_util.root_file(lsp_util.insert_package_json({
-            '.eslintrc.js',
-            '.eslintrc.cjs',
-            '.eslintrc.yaml',
-            '.eslintrc.yml',
-            '.eslintrc.json',
-            'eslint.config.js',
-            'eslint.config.ts',
-          }, 'eslintConfig')),
-          require_cwd = true,
-        }),
-        stylelint = vim.tbl_deep_extend('force', stylelint, {
-          cwd = conform_util.root_file(lsp_util.insert_package_json({
-            '.stylelintrc',
-            '.stylelintrc.js',
-            '.stylelintrc.cjs',
-            '.stylelintrc.yaml',
-            '.stylelintrc.yml',
-            '.stylelintrc.json',
-            'stylelint.config.js',
-            'stylelint.config.cjs',
-            'stylelint.config.mjs',
-            'stylelint.config.ts',
-          }, 'stylelint')),
-          require_cwd = true,
-        }),
-        shfmt = vim.tbl_deep_extend('force', shfmt, {
-          args = conform_util.extend_args(
-            shfmt.args,
-            { '-i', '2', '-s', '-ci', '-sr', '-ln', 'bash' },
-            { append = true }
-          ),
-        }),
+      opts.formatters.eslint_d = {
+        cwd = conform_util.root_file(lsp_util.insert_package_json({
+          '.eslintrc.js',
+          '.eslintrc.cjs',
+          '.eslintrc.yaml',
+          '.eslintrc.yml',
+          '.eslintrc.json',
+          'eslint.config.js',
+          'eslint.config.ts',
+        }, 'eslintConfig')),
+        require_cwd = true,
       }
 
-      conform.formatters = vim.tbl_deep_extend('force', conform.formatters, formatters)
-
-      local custom_formatters = {
-        prettierd_js = vim.tbl_deep_extend('force', prettierd, {
-          condition = conform_util.root_file {
-            'node_modules/eslint-plugin-prettier',
-            'node_modules/eslint-config-prettier',
-          },
-        }),
-        prettierd_css = vim.tbl_deep_extend('force', prettierd, {
-          condition = conform_util.root_file { 'node_modules/stylelint-prettier' },
-        }),
+      opts.formatters.stylelint = {
+        cwd = conform_util.root_file(lsp_util.insert_package_json({
+          '.stylelintrc',
+          '.stylelintrc.js',
+          '.stylelintrc.cjs',
+          '.stylelintrc.yaml',
+          '.stylelintrc.yml',
+          '.stylelintrc.json',
+          'stylelint.config.js',
+          'stylelint.config.cjs',
+          'stylelint.config.mjs',
+          'stylelint.config.ts',
+        }, 'stylelint')),
+        require_cwd = true,
       }
 
-      opts.formatters = vim.tbl_deep_extend('force', opts.formatters, custom_formatters)
+      opts.formatters.prettierd_js = vim.tbl_deep_extend('force', prettierd, {
+        condition = conform_util.root_file {
+          'node_modules/eslint-plugin-prettier',
+          'node_modules/eslint-config-prettier',
+        },
+      })
+
+      opts.formatters.prettierd_css = vim.tbl_deep_extend('force', prettierd, {
+        condition = conform_util.root_file { 'node_modules/stylelint-prettier' },
+      })
 
       conform.setup(opts)
     end,
