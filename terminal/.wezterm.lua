@@ -1,5 +1,6 @@
 local config = {}
 local wezterm = require 'wezterm'
+local action = wezterm.action
 
 if wezterm.config_builder then config = wezterm.config_builder() end
 
@@ -29,5 +30,19 @@ config.window_padding = {
   top = 16,
   bottom = 16,
 }
+
+config.keys = {
+  { key = 'l', mods = 'ALT', action = action.ShowLauncher },
+  { key = 'w', mods = 'ALT', action = action.ShowLauncherArgs { flags = 'FUZZY|WORKSPACES' } },
+  { key = 'n', mods = 'ALT', action = action.SwitchWorkspaceRelative(1) },
+  { key = 'p', mods = 'ALT', action = action.SwitchWorkspaceRelative(-1) },
+}
+
+wezterm.on('format-window-title', function(tab)
+  local active_workspace = wezterm.mux.get_active_workspace()
+  local workspace = active_workspace ~= 'default' and string.format(' / %s', active_workspace) or ''
+
+  return tab.active_pane.title .. workspace
+end)
 
 return config
