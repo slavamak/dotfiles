@@ -88,6 +88,9 @@ return {
               format = {
                 enable = true,
               },
+              workspace = {
+                checkThirdParty = false,
+              },
             },
           },
         },
