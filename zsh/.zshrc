@@ -8,7 +8,7 @@ eval "$(starship init zsh)"
 
 alias ls="eza -1 --group-directories-first"
 alias la="eza -1a --group-directories-first"
-alias ll="eza -l --group-directories-first"
+alias ll="eza -la --group-directories-first"
 alias tree="eza -T --group-directories-first"
 alias tms="tmux-sessionizer"
 
