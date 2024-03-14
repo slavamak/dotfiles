@@ -18,8 +18,6 @@ export FZF_DEFAULT_OPTS="
 export TMUX_DIRS=(
   ~
   ~/Development
-  ~/Development/clients
-  ~/Development/personal
 )
 
 export HISTFILE="$HOME/.zsh_history"
