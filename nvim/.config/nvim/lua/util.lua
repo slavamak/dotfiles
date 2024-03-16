@@ -47,4 +47,8 @@ M.is_large_or_minified = function(buf)
   return false
 end
 
+M.augroup = function(name)
+  return vim.api.nvim_create_augroup('augroup_' .. name, { clear = true })
+end
+
 return M

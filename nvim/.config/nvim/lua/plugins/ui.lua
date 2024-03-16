@@ -1,29 +1,5 @@
 return {
   {
-    'rose-pine/neovim',
-    name = 'rose-pine',
-    lazy = false,
-    priority = 1000,
-    opts = {
-      styles = {
-        bold = false,
-        italic = false,
-        transparency = false,
-      },
-      highlight_groups = {
-        Lualine = { fg = 'muted', bg = 'base' },
-        LualineNC = { fg = 'highlight_med', bg = 'base' },
-        NonText = { fg = 'highlight_med' },
-        VirtColumn = { fg = 'highlight_low' },
-      },
-    },
-    config = function(_, opts)
-      require('rose-pine').setup(opts)
-      vim.cmd 'colorscheme rose-pine'
-    end,
-  },
-
-  {
     'nvim-lualine/lualine.nvim',
     event = { 'BufReadPost', 'BufNewFile', 'InsertEnter' },
     dependencies = {
@@ -35,6 +11,25 @@ return {
         section_separators = { left = '', right = '' },
         globalstatus = true,
         disabled_filetypes = { 'alpha' },
+        theme = function()
+          local colorscheme = require 'modules.colorscheme'
+          local palette = colorscheme.current_palette()
+          local normal = { fg = palette.subtle, bg = palette.none }
+          local inactive = { fg = palette.muted, bg = palette.none }
+
+          return {
+            normal = {
+              a = normal,
+              b = normal,
+              c = normal,
+            },
+            inactive = {
+              a = inactive,
+              b = inactive,
+              c = inactive,
+            },
+          }
+        end,
       },
       tabline = {
         lualine_a = {
@@ -133,7 +128,21 @@ return {
       },
     },
     config = function(_, opts)
-      require('modules.lualine').setup(opts)
+      local lualine = require 'lualine'
+      local util = require 'util'
+
+      local lualine_setup = function()
+        lualine.setup(opts)
+        vim.o.showtabline = 1
+      end
+
+      lualine_setup()
+
+      vim.api.nvim_create_autocmd('ColorScheme', {
+        callback = lualine_setup,
+        group = util.augroup 'update_lualine_theme',
+        pattern = 'default',
+      })
     end,
   },
 
@@ -161,14 +170,24 @@ return {
   {
     'f-person/auto-dark-mode.nvim',
     lazy = false,
-    config = true,
+    config = {
+      set_dark_mode = function()
+        vim.api.nvim_set_option_value('background', 'dark', {})
+        vim.cmd 'colorscheme default'
+      end,
+      set_light_mode = function()
+        vim.api.nvim_set_option_value('background', 'light', {})
+        vim.cmd 'colorscheme default'
+      end,
+      update_interval = 1000,
+    },
   },
 
   {
     'lukas-reineke/virt-column.nvim',
     event = { 'BufReadPost', 'BufNewFile' },
     opts = {
-      highlight = 'VirtColumn',
+      char = '│',
     },
   },
 
@@ -179,7 +198,6 @@ return {
     opts = {
       indent = {
         char = '│',
-        highlight = 'VirtColumn',
       },
       scope = {
         show_start = false,
