@@ -170,7 +170,7 @@ return {
   {
     'f-person/auto-dark-mode.nvim',
     lazy = false,
-    config = {
+    opts = {
       set_dark_mode = function()
         vim.api.nvim_set_option_value('background', 'dark', {})
         vim.cmd 'colorscheme default'
