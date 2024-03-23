@@ -42,5 +42,7 @@ zle -N edit-command-line
 bindkey "^X" edit-command-line
 bindkey -M vicmd "^X" edit-command-line
 
-setopt HIST_IGNORE_DUPS
+setopt HIST_IGNORE_ALL_DUPS
+setopt HIST_REDUCE_BLANKS
+setopt HIST_SAVE_NO_DUPS
 setopt SHARE_HISTORY
