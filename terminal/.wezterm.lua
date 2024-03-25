@@ -5,8 +5,8 @@ local action = wezterm.action
 if wezterm.config_builder then config = wezterm.config_builder() end
 
 local function scheme_for_appearance(appearance)
-  if appearance:find 'Dark' then return 'rose-pine' end
-  return 'rose-pine-dawn'
+  if appearance:find 'Dark' then return 'Kanagawa (Gogh)' end
+  return 'Github (Gogh)'
 end
 
 config.animation_fps = 60

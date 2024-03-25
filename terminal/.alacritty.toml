@@ -1,6 +1,6 @@
 import = [
-  "~/.config/alacritty/nvim-dark.toml",
-  # "~/.config/alacritty/nvim-light.toml",
+  "~/.config/alacritty/kanagawa.toml",
+  # "~/.config/alacritty/github-light.toml",
 ]
 
 [env]
