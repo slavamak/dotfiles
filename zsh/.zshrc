@@ -1,3 +1,12 @@
+echo " _   _ _                        _ "
+echo "| | | (_)                      | |"
+echo "| |_| |_     _ __   ___ _ __ __| |"
+echo "|  _  | |   | '_ \ / _ \ '__/ _\` |"
+echo "| | | | |_  | | | |  __/ | | (_| |"
+echo "\_| |_/_( ) |_| |_|\___|_|  \__,_|"
+echo "        |/                        "
+echo "                                  "
+
 source "$HOME/.local/share/zap/zap.zsh"
 source "$HOME/.config/zsh/completion.zsh"
 source "$HOME/.asdf/asdf.sh"
