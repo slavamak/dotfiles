@@ -70,3 +70,5 @@ Base configuration with [zap-zsh](https://github.com/zap-zsh/zap) plugin manager
 A few simple key mappings:
 
 - Swap `CAPSLOCK` with `LEFT CONTROL`
+- Double-tap `LEFT CONTROL` to `CAPSLOCK` toggle
+- `CAPSLOCK` + `SPACEBAR` to `CONTROL` + `OPTION` + `SPACEBAR` (MacOS input source toggle)
