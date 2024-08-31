@@ -1,6 +1,6 @@
 import = [
-  "~/.config/alacritty/kanagawa.toml",
-  # "~/.config/alacritty/github-light.toml",
+  "~/.config/alacritty/zenwritten_dark.toml",
+  # "~/.config/alacritty/zenwritten_light.toml",
 ]
 
 [env]
