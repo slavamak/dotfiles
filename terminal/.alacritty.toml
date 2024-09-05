@@ -1,6 +1,6 @@
 import = [
-  "~/.config/alacritty/zenwritten_dark.toml",
-  # "~/.config/alacritty/zenwritten_light.toml",
+  "~/.config/alacritty/catppuccin-mocha.toml",
+  # "~/.config/alacritty/catppuccin-latte.toml",
 ]
 
 [env]
