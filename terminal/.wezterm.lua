@@ -9,8 +9,14 @@ local function scheme_for_appearance(appearance)
   return 'Catppuccin Latte'
 end
 
+local catppuccin_scheme = wezterm.get_builtin_color_schemes()['Catppuccin Mocha']
+catppuccin_scheme.background = '#0a0c10'
+
 config.animation_fps = 60
 config.color_scheme = scheme_for_appearance(wezterm.gui.get_appearance())
+config.color_schemes = {
+  ['Catppuccin Mocha'] = catppuccin_scheme,
+}
 config.font = wezterm.font {
   family = 'Iosevka Nerd Font',
   weight = 'Medium',
