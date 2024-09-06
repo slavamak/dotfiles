@@ -72,3 +72,4 @@ A few simple key mappings:
 - Swap `CAPSLOCK` with `LEFT CONTROL`
 - Double-tap `LEFT CONTROL` to `CAPSLOCK` toggle
 - `CAPSLOCK` + `SPACEBAR` to `CONTROL` + `OPTION` + `SPACEBAR` (MacOS input source toggle)
+- `LEFT CONTROL` + `hjkl` to Arrow Keys for browser apps
