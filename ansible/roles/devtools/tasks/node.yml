@@ -16,7 +16,6 @@
   set_fact:
     pnpm_packages:
       - "@shopify/cli"
-      - "@shopify/theme"
 
 - name: Install pnpm packages
   community.general.pnpm:
