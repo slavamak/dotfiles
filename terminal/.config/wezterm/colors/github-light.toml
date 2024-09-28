@@ -1,0 +1,35 @@
+[colors]
+ansi = [
+  "#24292f", # black
+  "#cf222e", # red
+  "#116329", # green
+  "#4d2d00", # yellow
+  "#0969da", # blue
+  "#8250df", # magenta
+  "#1b7c83", # cyan
+  "#6e7781", # white
+]
+background = "#ffffff"
+brights = [
+  "#57606a", # bright black
+  "#a40e26", # bright red
+  "#1a7f37", # bright green
+  "#633c01", # bright yellow
+  "#218bff", # bright blue
+  "#a475f9", # bright magenta
+  "#3192aa", # bright cyan
+  "#8c959f", # bright white
+]
+cursor_bg = "#0969da"
+cursor_border = "#0969da"
+cursor_fg = "#1F2328"
+foreground = "#1F2328"
+selection_bg = "rgba(9,105,218,0.2)"
+selection_fg = "none"
+
+[colors.indexed]
+
+[metadata]
+aliases = ["Github Light Default"]
+name = "Github Light"
+wezterm_version = "Always"

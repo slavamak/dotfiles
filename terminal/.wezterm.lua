@@ -5,27 +5,12 @@ local action = wezterm.action
 if wezterm.config_builder then config = wezterm.config_builder() end
 
 local function scheme_for_appearance(appearance)
-  if appearance:find 'Dark' then return 'Github Dark (Gogh)' end
-  return 'Github Light (Gogh)'
+  if appearance:find 'Dark' then return 'Github Dark' end
+  return 'Github Light'
 end
-
-local github_light_scheme = wezterm.get_builtin_color_schemes()['Github Light (Gogh)']
-github_light_scheme.background = '#f6f8fa'
-github_light_scheme.ansi[2] = '#cf222e'
-github_light_scheme.ansi[3] = '#1a7f37'
-github_light_scheme.ansi[4] = '#9a6700'
-github_light_scheme.ansi[6] = '#8250df'
-github_light_scheme.ansi[7] = '#1b7c83'
-github_light_scheme.brights[2] = '#a40e26'
-github_light_scheme.brights[3] = '#2da44e'
-github_light_scheme.brights[4] = '#bf8700'
-github_light_scheme.brights[6] = '#a475f9'
 
 config.animation_fps = 60
 config.color_scheme = scheme_for_appearance(wezterm.gui.get_appearance())
-config.color_schemes = {
-  ['Github Light (Gogh)'] = github_light_scheme,
-}
 config.font = wezterm.font {
   family = 'Iosevka Nerd Font',
   weight = 'Medium',
