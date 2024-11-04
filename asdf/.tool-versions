@@ -3,8 +3,9 @@ deno 1.42.1
 elixir 1.17.1-otp-27
 erlang 27.0
 golang 1.21.6
-nodejs 20.12.1
+nodejs 22.10.0
 opam 2.2.1
 python 3.12.1
 ruby 3.2.0
 rust 1.75.0
+zig 0.13.0
