@@ -4,13 +4,8 @@ local action = wezterm.action
 
 if wezterm.config_builder then config = wezterm.config_builder() end
 
-local function scheme_for_appearance(appearance)
-  if appearance:find 'Dark' then return 'Github Dark' end
-  return 'Github Light'
-end
-
 config.animation_fps = 60
-config.color_scheme = scheme_for_appearance(wezterm.gui.get_appearance())
+config.color_scheme = 'Rasmus'
 config.font = wezterm.font {
   family = 'Iosevka Nerd Font',
   weight = 'Medium',

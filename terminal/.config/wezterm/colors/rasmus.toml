@@ -1,0 +1,35 @@
+[colors]
+ansi = [
+  "#333332", # black
+  "#ff968c", # red
+  "#61957f", # green
+  "#ffc591", # yellow
+  "#8db4d4", # blue
+  "#de9bc8", # magenta
+  "#7bb099", # cyan
+  "#d1d1d1", # white
+]
+background = "#1a1a19"
+brights = [
+  "#4c4c4b", # bright black
+  "#ffafa5", # bright red
+  "#7aae98", # bright green
+  "#ffdeaa", # bright yellow
+  "#a6cded", # bright blue
+  "#f7b4e1", # bright magenta
+  "#94c9b2", # bright cyan
+  "#eaeaea", # bright white
+]
+cursor_bg = "#d1d1d1"
+cursor_border = "#d1d1d1"
+cursor_fg = "#1a1a19"
+foreground = "#d1d1d1"
+selection_bg = "#2a2a29"
+selection_fg = "none"
+
+[colors.indexed]
+
+[metadata]
+aliases = ["Rasmus"]
+name = "Rasmus"
+wezterm_version = "Always"
