@@ -2,7 +2,7 @@
 
 # Configurations for MacOS/Ubuntu
 
-![screenshot](https://github.com/user-attachments/assets/76545e22-8609-4571-96bf-6c10fe04f583)
+![screenshot](https://github.com/user-attachments/assets/cf530d77-eb23-4062-b6a0-fb9b12cc2fd3)
 
 ## Requirements
 
