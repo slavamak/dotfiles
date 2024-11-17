@@ -2,6 +2,8 @@
 
 # Configurations for MacOS/Ubuntu
 
+![screenshot](https://github.com/user-attachments/assets/76545e22-8609-4571-96bf-6c10fe04f583)
+
 ## Requirements
 
 Make sure to these package is installed to your system:
