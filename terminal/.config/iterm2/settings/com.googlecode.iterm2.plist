@@ -977,7 +977,7 @@
 			<key>Guid</key>
 			<string>8DF571F8-15FB-4C2E-A1C9-085ECF74EBA7</string>
 			<key>Horizontal Spacing</key>
-			<integer>1</integer>
+			<real>1</real>
 			<key>Idle Code</key>
 			<integer>0</integer>
 			<key>Jobs to Ignore</key>
@@ -1472,7 +1472,7 @@
 			<key>Use Underline Color (Light)</key>
 			<false/>
 			<key>Vertical Spacing</key>
-			<integer>1</integer>
+			<real>1</real>
 			<key>Visual Bell</key>
 			<true/>
 			<key>Window Type</key>
@@ -4025,7 +4025,7 @@
 			<key>HotKey Modifier Flags</key>
 			<integer>262144</integer>
 			<key>HotKey Window Animates</key>
-			<true/>
+			<false/>
 			<key>HotKey Window AutoHides</key>
 			<true/>
 			<key>HotKey Window Dock Click Action</key>
@@ -4619,7 +4619,7 @@
 			<key>Visual Bell</key>
 			<true/>
 			<key>Window Type</key>
-			<integer>2</integer>
+			<integer>7</integer>
 			<key>Working Directory</key>
 			<string>/Users/slavamak</string>
 		</dict>
