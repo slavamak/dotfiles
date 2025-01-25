@@ -1,27 +1,27 @@
+[color]
+  branch = auto
+  grep = auto
+  diff = auto
+  interactive = auto
+  status = auto
+  ui = auto
+[commit]
+  gpgsign = true
 [core]
-  excludesfile = ~/.gitignore
   editor = nvim
+  excludesfile = ~/.gitignore
   ignorecase = false
-[push]
-  default = simple
+[gpg]
+  format = ssh
+[init]
+  defaultBranch = main
 [pull]
   ff = only
-[color]
-  status = auto
-  diff = auto
-  branch = auto
-  interactive = auto
-  grep = auto
-  ui = auto
+[push]
+  default = simple
+[tag]
+  gpgsign = true
 [user]
   name = Slava Maksimov
   email = hello@slavamak.com
-  signingkey = ~/.ssh/id_ed25519.pub
-[init]
-  defaultBranch = main
-[gpg]
-  format = ssh
-[commit]
-  gpgsign = true
-[tag]
-  gpgsign = true
+  signingkey = key::ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAICnLwojOyRZBr9Hj4urW8h0lbleDIBrOr1ZfWXAzxOCL hello@slavamak.com
