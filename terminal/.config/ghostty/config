@@ -1,0 +1,13 @@
+font-family = Iosevka Nerd Font
+font-feature = -liga
+font-size = 16
+keybind = global:ctrl+/=toggle_quick_terminal
+quick-terminal-animation-duration = 0
+quick-terminal-position = right
+theme = light:github-light, dark:rasmus
+window-width = 100
+window-height = 30
+window-padding-balance = true
+window-padding-color = extend
+window-padding-x = 4
+window-padding-y = 4
