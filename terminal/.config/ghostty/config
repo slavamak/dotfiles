@@ -1,6 +1,6 @@
 font-family = Iosevka Nerd Font
 font-feature = -liga
-font-size = 16
+font-size = 14
 keybind = global:ctrl+/=toggle_quick_terminal
 quick-terminal-animation-duration = 0
 quick-terminal-position = right
