@@ -1,5 +1,5 @@
 bun 1.0.0
-deno 1.42.1
+deno 2.2.5
 elixir 1.17.1-otp-27
 erlang 27.0
 golang 1.21.6
