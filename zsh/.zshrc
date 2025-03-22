@@ -1,5 +1,4 @@
 source "$HOME/.local/share/zap/zap.zsh"
-source "$HOME/.asdf/asdf.sh"
 source "$HOME/.fzf.zsh"
 
 eval "$(starship init zsh)"
@@ -17,7 +16,6 @@ plug "zsh-users/zsh-syntax-highlighting"
 plug "MichaelAquilina/zsh-you-should-use"
 
 source "$HOME/.config/zsh/completion.zsh"
-source "$HOME/.asdf/completions/asdf.bash"
 
 bindkey "^A" beginning-of-line
 bindkey "^E" end-of-line

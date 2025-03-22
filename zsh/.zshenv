@@ -34,6 +34,7 @@ export DOTFILES="$HOME/.dotfiles"
 export ZSH_COMPLETIONS="$HOME/.local/share/completions"
 export PNPM_HOME="$HOME/Library/pnpm"
 
+add_to_path "${ASDF_DATA_DIR:-$HOME/.asdf}/shims"
 add_to_path "$PNPM_HOME"
 add_to_path "$HOME/.local/bin"
 add_to_path "$HOME/.local/scripts"

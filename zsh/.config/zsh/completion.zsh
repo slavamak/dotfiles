@@ -1,4 +1,5 @@
 fpath+="$ZSH_COMPLETIONS"
+fpath+="${ASDF_DATA_DIR:-$HOME/.asdf}/completions"
 
 autoload -U +X bashcompinit && bashcompinit
 autoload -U +X compinit && compinit
