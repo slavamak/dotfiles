@@ -33,6 +33,7 @@ export VISUAL="$EDITOR"
 export DOTFILES="$HOME/.dotfiles"
 export ZSH_COMPLETIONS="$HOME/.local/share/completions"
 export PNPM_HOME="$HOME/Library/pnpm"
+export GPG_TTY="$(tty)"
 
 add_to_path "${ASDF_DATA_DIR:-$HOME/.asdf}/shims"
 add_to_path "$PNPM_HOME"
