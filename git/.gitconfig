@@ -11,8 +11,6 @@
   editor = nvim
   excludesfile = ~/.gitignore
   ignorecase = false
-[gpg]
-  format = ssh
 [init]
   defaultBranch = main
 [pull]
@@ -23,7 +21,9 @@
   gpgsign = true
 [user]
   name = Slava Maksimov
-  email = hello@slavamak.com
-  signingkey = key::ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAICnLwojOyRZBr9Hj4urW8h0lbleDIBrOr1ZfWXAzxOCL hello@slavamak.com
+  email = 204412653+slavafyi@users.noreply.github.com
+  signingkey = A3AD9EDD91BAA8ED
+[includeIf "gitdir:~/dev/work/"]
+  path = ~/dev/work/.gitconfig
 [includeIf "gitdir:~/dev/nx/"]
   path = ~/dev/nx/.gitconfig
