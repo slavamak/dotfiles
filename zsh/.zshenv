@@ -17,7 +17,18 @@ export FZF_DEFAULT_OPTS="
 
 export TMUX_DIRS=(
   ~
-  ~/Development
+  ~/dev
+  ~/dev/nx
+  ~/dev/personal
+  ~/dev/work
+  ~/dev/work/medito
+  ~/dev/work/medito/apps
+  ~/dev/work/medito/themes
+  ~/dev/work/medito/storefronts
+  ~/dev/work/medito/scripts
+  ~/dev/work/steadyfreddy
+  ~/dev/work/steadyfreddy/scripts
+  ~/dev/work/steadyfreddy/theme
 )
 
 export HISTORY_IGNORE="(#i)(*pass*|*secret*|*token*|*key*|*vault*)"
@@ -35,7 +46,6 @@ export ZSH_COMPLETIONS="$HOME/.local/share/completions"
 export PNPM_HOME="$HOME/Library/pnpm"
 export GPG_TTY="$(tty)"
 
-add_to_path "${ASDF_DATA_DIR:-$HOME/.asdf}/shims"
 add_to_path "$PNPM_HOME"
 add_to_path "$HOME/.local/bin"
 add_to_path "$HOME/.local/scripts"
